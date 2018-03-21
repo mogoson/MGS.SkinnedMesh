@@ -69,15 +69,15 @@ namespace Developer.FlexiblePipe
         }
         #endregion
 
-        #region Public Method
+        #region Protected Method
         /// <summary>
-        /// Get point from center curve of pipe at time.
+        /// Get local point from center curve of pipe at time.
         /// </summary>
         /// <param name="time">Time of pipe center curve.</param>
-        /// <returns>Point on pipe curve at time.</returns>
-        public override Vector3 GetPointFromCurve(float time)
+        /// <returns>Local point on pipe curve at time.</returns>
+        protected override Vector3 GetLocalPoint(float time)
         {
-            return transform.TransformPoint(CubicBezierCurve.GetPoint(anchor, time));
+            return CubicBezierCurve.GetPoint(anchor, time);
         }
         #endregion
     }

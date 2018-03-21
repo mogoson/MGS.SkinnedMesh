@@ -29,7 +29,7 @@ namespace Developer.FlexiblePipe
             var constDelta = Mathf.Max(Delta, Delta * HandleUtility.GetHandleSize(Target.transform.position));
             for (float t = 0; t < Target.CurveMaxTime; t += constDelta)
             {
-                Handles.DrawLine(Target.GetPointFromCurve(t), Target.GetPointFromCurve(Mathf.Min(Target.CurveMaxTime, t + constDelta)));
+                Handles.DrawLine(Target.GetWorldPoint(t), Target.GetWorldPoint(Mathf.Min(Target.CurveMaxTime, t + constDelta)));
             }
 
             if (Application.isPlaying)

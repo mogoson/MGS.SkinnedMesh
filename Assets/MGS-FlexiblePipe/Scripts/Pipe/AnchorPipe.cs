@@ -55,22 +55,24 @@ namespace Developer.FlexiblePipe
 
         #region Protected Method
         /// <summary>
+        /// Get local point from center curve of pipe at time.
+        /// </summary>
+        /// <param name="time">Time of pipe center curve.</param>
+        /// <returns>Local point on pipe curve at time.</returns>
+        protected override Vector3 GetLocalPoint(float time)
+        {
+            return curve.Evaluate(time);
+        }
+        #endregion
+
+        #region Public Method
+        /// <summary>
         /// Rebuild the mesh of pipe.
         /// </summary>
         public override void Rebuild()
         {
             curve = VectorAnimationCurve.FromAnchors(anchors.ToArray());
             base.Rebuild();
-        }
-
-        /// <summary>
-        /// Get point from center curve of pipe at time.
-        /// </summary>
-        /// <param name="time">Time of pipe center curve.</param>
-        /// <returns>Point on pipe curve at time.</returns>
-        public override Vector3 GetPointFromCurve(float time)
-        {
-            return transform.TransformPoint(curve.Evaluate(time));
         }
 
         /// <summary>

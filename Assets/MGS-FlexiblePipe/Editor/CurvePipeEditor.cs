@@ -30,7 +30,7 @@ namespace Developer.FlexiblePipe
             Handles.color = Blue;
             for (float t = 0; t < Target.CurveMaxTime; t += Delta)
             {
-                Handles.DrawLine(Target.GetPointFromCurve(t), Target.GetPointFromCurve(t + Delta));
+                Handles.DrawLine(Target.GetWorldPoint(t), Target.GetWorldPoint(t + Delta));
             }
         }
         #endregion

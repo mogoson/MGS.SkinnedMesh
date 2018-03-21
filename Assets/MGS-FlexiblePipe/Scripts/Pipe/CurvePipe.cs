@@ -63,13 +63,13 @@ namespace Developer.FlexiblePipe
             for (int i = 0; i < extendSegment; i++)
             {
                 var t = i * space;
-                var center = GetPointFromCurveAt(t);
-                var tangent = (GetPointFromCurveAt(t + Delta) - center).normalized;
+                var center = GetLocalPointAt(t);
+                var tangent = (GetLocalPointAt(t + Delta) - center).normalized;
                 vertices.AddRange(CreateSegmentVertices(center, Quaternion.LookRotation(tangent)));
             }
 
-            var lastCenter = GetPointFromCurveAt(1.0f);
-            var lastTangent = (lastCenter - GetPointFromCurveAt(1.0f - Delta)).normalized;
+            var lastCenter = GetLocalPointAt(1.0f);
+            var lastTangent = (lastCenter - GetLocalPointAt(1.0f - Delta)).normalized;
 
             vertices.AddRange(CreateSegmentVertices(lastCenter, Quaternion.LookRotation(lastTangent)));
             return vertices.ToArray();
@@ -125,14 +125,21 @@ namespace Developer.FlexiblePipe
         }
 
         /// <summary>
-        /// Get point from center curve of pipe at normalized time.
+        /// Get local point from center curve of pipe at normalized time.
         /// </summary>
         /// <param name="t">Normalized time in the range(0~1).</param>
-        /// <returns>Point on pipe curve at t.</returns>
-        protected virtual Vector3 GetPointFromCurveAt(float t)
+        /// <returns>Local point on pipe curve at t.</returns>
+        protected Vector3 GetLocalPointAt(float t)
         {
-            return GetPointFromCurve(CurveMaxTime * t);
+            return GetLocalPoint(CurveMaxTime * t);
         }
+
+        /// <summary>
+        /// Get local point from center curve of pipe at time.
+        /// </summary>
+        /// <param name="time">Time of pipe center curve.</param>
+        /// <returns>Local point on pipe curve at time.</returns>
+        protected abstract Vector3 GetLocalPoint(float time);
         #endregion
 
         #region Public Method
@@ -141,7 +148,10 @@ namespace Developer.FlexiblePipe
         /// </summary>
         /// <param name="time">Time of pipe center curve.</param>
         /// <returns>Point on pipe curve at time.</returns>
-        public abstract Vector3 GetPointFromCurve(float time);
+        public Vector3 GetWorldPoint(float time)
+        {
+            return transform.TransformPoint(GetLocalPoint(time));
+        }
         #endregion
     }
 }

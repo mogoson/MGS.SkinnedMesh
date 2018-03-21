@@ -23,21 +23,6 @@ namespace Developer.FlexiblePipe
         protected new BezierPipe Target { get { return target as BezierPipe; } }
         #endregion
 
-        #region Private Method
-        private void DrawAnchorHandle(Vector3 anchor, Action<Vector3> callback)
-        {
-            EditorGUI.BeginChangeCheck();
-            var position = Handles.FreeMoveHandle(anchor, Quaternion.identity, HandleUtility.GetHandleSize(anchor) * AnchorSize, MoveSnap, SphereCap);
-            if (EditorGUI.EndChangeCheck())
-            {
-                Undo.RecordObject(Target, "Change Anchor Position");
-                callback.Invoke(position);
-                Target.Rebuild();
-                MarkSceneDirty();
-            }
-        }
-        #endregion
-
         #region Protected Method
         protected override void OnSceneGUI()
         {
@@ -55,6 +40,19 @@ namespace Developer.FlexiblePipe
 
             Handles.DrawLine(Target.StartPoint, Target.StartTangentPoint);
             Handles.DrawLine(Target.EndPoint, Target.EndTangentPoint);
+        }
+
+        protected void DrawAnchorHandle(Vector3 anchor, Action<Vector3> callback)
+        {
+            EditorGUI.BeginChangeCheck();
+            var position = Handles.FreeMoveHandle(anchor, Quaternion.identity, HandleUtility.GetHandleSize(anchor) * AnchorSize, MoveSnap, SphereCap);
+            if (EditorGUI.EndChangeCheck())
+            {
+                Undo.RecordObject(Target, "Change Anchor Position");
+                callback.Invoke(position);
+                Target.Rebuild();
+                MarkSceneDirty();
+            }
         }
         #endregion
     }
