@@ -10,11 +10,11 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Developer.EditorExtension;
+using Mogoson.EditorExtension;
 using UnityEditor;
 using UnityEngine;
 
-namespace Developer.SkinnedMesh
+namespace Mogoson.SkinnedMesh
 {
     [CustomEditor(typeof(Skin), true)]
     public class SkinEditor : GenericEditor

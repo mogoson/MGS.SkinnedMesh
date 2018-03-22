@@ -12,8 +12,11 @@
 
 using UnityEngine;
 
-namespace Developer.SkinnedMesh
+namespace Mogoson.SkinnedMesh
 {
+    /// <summary>
+    /// Render dynamic skinned mesh.
+    /// </summary>
     [RequireComponent(typeof(SkinnedMeshRenderer))]
     public abstract class Skin : MonoBehaviour
     {

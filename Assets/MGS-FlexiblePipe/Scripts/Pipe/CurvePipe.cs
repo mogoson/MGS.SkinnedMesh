@@ -11,12 +11,15 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Developer.SkinnedMesh;
+using Mogoson.SkinnedMesh;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Developer.FlexiblePipe
+namespace Mogoson.FlexiblePipe
 {
+    /// <summary>
+    /// Render dynamic pipe mesh base on center curve.
+    /// </summary>
     public abstract class CurvePipe : Skin
     {
         #region Field and Property
@@ -38,7 +41,7 @@ namespace Developer.FlexiblePipe
         /// <summary>
         /// Max time of center curve.
         /// </summary>
-        public abstract float CurveMaxTime { get; }
+        public abstract float MaxTime { get; }
 
         /// <summary>
         /// Radian of circle.
@@ -131,7 +134,7 @@ namespace Developer.FlexiblePipe
         /// <returns>Local point on pipe curve at t.</returns>
         protected Vector3 GetLocalPointAt(float t)
         {
-            return GetLocalPoint(CurveMaxTime * t);
+            return GetLocalPoint(MaxTime * t);
         }
 
         /// <summary>

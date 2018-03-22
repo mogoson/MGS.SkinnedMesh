@@ -2,7 +2,7 @@
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  AnchorPipe.cs
- *  Description  :  Create pipe mesh base on anchor vector animation curve.
+ *  Description  :  Render dynamic pipe mesh base on anchor vector animation curve.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -10,13 +10,16 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Developer.AnimationCurveExtension;
+using Mogoson.AnimationCurveExtension;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Developer.FlexiblePipe
+namespace Mogoson.FlexiblePipe
 {
-    [AddComponentMenu("Developer/FlexiblePipe/AnchorPipe")]
+    /// <summary>
+    /// Render dynamic pipe mesh base on anchor vector animation curve.
+    /// </summary>
+    [AddComponentMenu("Mogoson/FlexiblePipe/AnchorPipe")]
     public class AnchorPipe : CurvePipe
     {
         #region Field and Property
@@ -36,7 +39,7 @@ namespace Developer.FlexiblePipe
         /// <summary>
         /// Max time of pipe curve.
         /// </summary>
-        public override float CurveMaxTime
+        public override float MaxTime
         {
             get
             {

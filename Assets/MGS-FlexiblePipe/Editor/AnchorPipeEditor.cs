@@ -13,7 +13,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Developer.FlexiblePipe
+namespace Mogoson.FlexiblePipe
 {
     [CustomEditor(typeof(AnchorPipe), true)]
     public class AnchorPipeEditor : CurvePipeEditor
@@ -27,9 +27,9 @@ namespace Developer.FlexiblePipe
         {
             Handles.color = Blue;
             var constDelta = Mathf.Max(Delta, Delta * HandleUtility.GetHandleSize(Target.transform.position));
-            for (float t = 0; t < Target.CurveMaxTime; t += constDelta)
+            for (float t = 0; t < Target.MaxTime; t += constDelta)
             {
-                Handles.DrawLine(Target.GetWorldPoint(t), Target.GetWorldPoint(Mathf.Min(Target.CurveMaxTime, t + constDelta)));
+                Handles.DrawLine(Target.GetWorldPoint(t), Target.GetWorldPoint(Mathf.Min(Target.MaxTime, t + constDelta)));
             }
 
             if (Application.isPlaying)

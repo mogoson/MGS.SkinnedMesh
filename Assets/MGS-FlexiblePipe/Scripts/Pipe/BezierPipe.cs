@@ -2,7 +2,7 @@
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  BezierPipe.cs
- *  Description  :  Create pipe mesh base on cubic bezier curve.
+ *  Description  :  Render dynamic pipe mesh base on cubic bezier curve.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -10,12 +10,15 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Developer.MathExtension.Curve;
+using Mogoson.MathExtension.Curve;
 using UnityEngine;
 
-namespace Developer.FlexiblePipe
+namespace Mogoson.FlexiblePipe
 {
-    [AddComponentMenu("Developer/FlexiblePipe/BezierPipe")]
+    /// <summary>
+    /// Render dynamic pipe mesh base on cubic bezier curve.
+    /// </summary>
+    [AddComponentMenu("Mogoson/FlexiblePipe/BezierPipe")]
     public class BezierPipe : CurvePipe
     {
         #region Field and Property
@@ -30,7 +33,7 @@ namespace Developer.FlexiblePipe
         /// <summary>
         /// Max time of pipe curve.
         /// </summary>
-        public override float CurveMaxTime { get { return 1.0f; } }
+        public override float MaxTime { get { return 1.0f; } }
 
         /// <summary>
         /// Start point of pipe curve.

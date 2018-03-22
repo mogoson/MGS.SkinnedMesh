@@ -14,7 +14,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace Developer.FlexiblePipe
+namespace Mogoson.FlexiblePipe
 {
     [CustomEditor(typeof(BezierPipe), true)]
     public class BezierPipeEditor : CurvePipeEditor

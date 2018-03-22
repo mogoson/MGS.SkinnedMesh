@@ -12,7 +12,7 @@
 
 using UnityEngine;
 
-namespace Developer.FlexiblePipe
+namespace Mogoson.FlexiblePipe
 {
     public class Machine : MonoBehaviour
     {

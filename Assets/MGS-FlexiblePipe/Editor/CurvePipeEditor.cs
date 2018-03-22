@@ -10,10 +10,10 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Developer.SkinnedMesh;
+using Mogoson.SkinnedMesh;
 using UnityEditor;
 
-namespace Developer.FlexiblePipe
+namespace Mogoson.FlexiblePipe
 {
     [CustomEditor(typeof(CurvePipe), true)]
     public class CurvePipeEditor : SkinEditor
@@ -28,7 +28,7 @@ namespace Developer.FlexiblePipe
         protected virtual void OnSceneGUI()
         {
             Handles.color = Blue;
-            for (float t = 0; t < Target.CurveMaxTime; t += Delta)
+            for (float t = 0; t < Target.MaxTime; t += Delta)
             {
                 Handles.DrawLine(Target.GetWorldPoint(t), Target.GetWorldPoint(t + Delta));
             }
