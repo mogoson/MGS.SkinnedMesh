@@ -10,7 +10,7 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Mogoson.AnimationCurveExtension;
+using Mogoson.Curve;
 using System.Collections.Generic;
 using UnityEngine;
 

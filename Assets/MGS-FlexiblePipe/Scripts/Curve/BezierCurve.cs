@@ -18,7 +18,7 @@
 using System;
 using UnityEngine;
 
-namespace Mogoson.MathExtension.Curve
+namespace Mogoson.Curve
 {
     /// <summary>
     /// Anchor points of linear bezier curve.

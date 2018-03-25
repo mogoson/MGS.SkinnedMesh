@@ -18,7 +18,7 @@
 using System;
 using UnityEngine;
 
-namespace Mogoson.AnimationCurveExtension
+namespace Mogoson.Curve
 {
     /// <summary>
     /// Key frame data.
