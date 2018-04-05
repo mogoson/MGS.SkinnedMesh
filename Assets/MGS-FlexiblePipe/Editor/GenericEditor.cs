@@ -28,8 +28,8 @@ namespace Mogoson.UEditor
         protected readonly Vector3 MoveSnap = Vector3.one;
 
 #if UNITY_5_5_OR_NEWER
-		protected readonly Handles.CapFunction CircleCap = Handles.CircleHandleCap;
-		protected readonly Handles.CapFunction SphereCap = Handles.SphereHandleCap;
+        protected readonly Handles.CapFunction CircleCap = Handles.CircleHandleCap;
+        protected readonly Handles.CapFunction SphereCap = Handles.SphereHandleCap;
 #else
         protected readonly Handles.DrawCapFunction CircleCap = Handles.CircleCap;
         protected readonly Handles.DrawCapFunction SphereCap = Handles.SphereCap;
@@ -90,8 +90,8 @@ namespace Mogoson.UEditor
         protected void DrawCircleCap(Vector3 position, Quaternion rotation, float size)
         {
 #if UNITY_5_5_OR_NEWER
-			if (Event.current.type == EventType.Repaint)
-				CircleCap(0, position, rotation, size, EventType.Repaint);
+            if (Event.current.type == EventType.Repaint)
+                CircleCap(0, position, rotation, size, EventType.Repaint);
 #else
             CircleCap(0, position, rotation, size);
 #endif
@@ -100,8 +100,8 @@ namespace Mogoson.UEditor
         protected void DrawSphereCap(Vector3 position, Quaternion rotation, float size)
         {
 #if UNITY_5_5_OR_NEWER
-			if (Event.current.type == EventType.Repaint)
-				SphereCap(0, position, rotation, size, EventType.Repaint);
+            if (Event.current.type == EventType.Repaint)
+                SphereCap(0, position, rotation, size, EventType.Repaint);
 #else
             SphereCap(0, position, rotation, size);
 #endif
@@ -118,7 +118,7 @@ namespace Mogoson.UEditor
         protected void MarkSceneDirty()
         {
 #if UNITY_5_3_OR_NEWER
-			EditorSceneManager.MarkAllScenesDirty();
+            EditorSceneManager.MarkAllScenesDirty();
 #else
             EditorApplication.MarkSceneDirty();
 #endif

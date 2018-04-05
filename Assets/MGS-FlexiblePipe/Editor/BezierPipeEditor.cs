@@ -31,12 +31,12 @@ namespace Mogoson.FlexiblePipe
             if (Application.isPlaying)
                 return;
 
-            DrawAnchorHandle(Target.StartPoint, (position) => { Target.StartPoint = position; });
-            DrawAnchorHandle(Target.EndPoint, (position) => { Target.EndPoint = position; });
+            DrawAnchorHandle(Target.StartPoint, position => { Target.StartPoint = position; });
+            DrawAnchorHandle(Target.EndPoint, position => { Target.EndPoint = position; });
 
             Handles.color = Color.green;
-            DrawAnchorHandle(Target.StartTangentPoint, (position) => { Target.StartTangentPoint = position; });
-            DrawAnchorHandle(Target.EndTangentPoint, (position) => { Target.EndTangentPoint = position; });
+            DrawAnchorHandle(Target.StartTangentPoint, position => { Target.StartTangentPoint = position; });
+            DrawAnchorHandle(Target.EndTangentPoint, position => { Target.EndTangentPoint = position; });
 
             Handles.DrawLine(Target.StartPoint, Target.StartTangentPoint);
             Handles.DrawLine(Target.EndPoint, Target.EndTangentPoint);
