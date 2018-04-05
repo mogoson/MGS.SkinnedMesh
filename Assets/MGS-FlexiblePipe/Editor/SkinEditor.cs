@@ -10,7 +10,7 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Mogoson.EditorExtension;
+using Mogoson.UEditor;
 using UnityEditor;
 using UnityEngine;
 
