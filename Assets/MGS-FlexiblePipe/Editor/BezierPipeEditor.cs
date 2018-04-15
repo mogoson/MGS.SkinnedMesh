@@ -17,6 +17,7 @@ using UnityEngine;
 namespace Mogoson.FlexiblePipe
 {
     [CustomEditor(typeof(BezierPipe), true)]
+    [CanEditMultipleObjects]
     public class BezierPipeEditor : CurvePipeEditor
     {
         #region Field and Property

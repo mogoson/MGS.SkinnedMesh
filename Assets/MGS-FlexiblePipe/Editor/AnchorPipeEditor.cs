@@ -16,6 +16,7 @@ using UnityEngine;
 namespace Mogoson.FlexiblePipe
 {
     [CustomEditor(typeof(AnchorPipe), true)]
+    [CanEditMultipleObjects]
     public class AnchorPipeEditor : CurvePipeEditor
     {
         #region Field and Property
