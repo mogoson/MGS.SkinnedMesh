@@ -39,6 +39,11 @@ namespace Mogoson.FlexiblePipe
         public float radius = 0.1f;
 
         /// <summary>
+        /// Is seal at both ends of pipe?
+        /// </summary>
+        public bool seal = false;
+
+        /// <summary>
         /// Max time of center curve.
         /// </summary>
         public abstract float MaxTime { get; }
@@ -73,8 +78,13 @@ namespace Mogoson.FlexiblePipe
 
             var lastCenter = GetLocalPointAt(1.0f);
             var lastTangent = (lastCenter - GetLocalPointAt(1.0f - Delta)).normalized;
-
             vertices.AddRange(CreateSegmentVertices(lastCenter, Quaternion.LookRotation(lastTangent)));
+
+            if (seal && aroundSegment > 2)
+            {
+                vertices.Add(GetLocalPointAt(0));
+                vertices.Add(GetLocalPointAt(1));
+            }
             return vertices.ToArray();
         }
 
@@ -105,6 +115,28 @@ namespace Mogoson.FlexiblePipe
                 triangles.Add(aroundSegment * i);
                 triangles.Add(aroundSegment * (i + 2) - 1);
                 triangles.Add(aroundSegment * (i + 1) - 1);
+            }
+
+            if (seal && aroundSegment > 2)
+            {
+                for (int i = 0; i < aroundSegment - 1; i++)
+                {
+                    triangles.Add(aroundSegment * (extendSegment + 1));
+                    triangles.Add(i + 1);
+                    triangles.Add(i);
+
+                    triangles.Add(aroundSegment * (extendSegment + 1) + 1);
+                    triangles.Add(aroundSegment * extendSegment + i);
+                    triangles.Add(aroundSegment * extendSegment + i + 1);
+                }
+
+                triangles.Add(aroundSegment * (extendSegment + 1));
+                triangles.Add(0);
+                triangles.Add(aroundSegment - 1);
+
+                triangles.Add(aroundSegment * (extendSegment + 1) + 1);
+                triangles.Add(aroundSegment * (extendSegment + 1) - 1);
+                triangles.Add(aroundSegment * extendSegment);
             }
             return triangles.ToArray();
         }
