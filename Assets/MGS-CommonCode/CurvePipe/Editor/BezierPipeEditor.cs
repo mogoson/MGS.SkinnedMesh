@@ -10,11 +10,10 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace Mogoson.FlexiblePipe
+namespace Mogoson.CurvePipe
 {
     [CustomEditor(typeof(BezierPipe), true)]
     [CanEditMultipleObjects]
@@ -32,28 +31,33 @@ namespace Mogoson.FlexiblePipe
             if (Application.isPlaying)
                 return;
 
-            DrawAnchorHandle(Target.StartPoint, position => { Target.StartPoint = position; });
-            DrawAnchorHandle(Target.EndPoint, position => { Target.EndPoint = position; });
+            DrawFreeMoveHandle(Target.StartPoint, Quaternion.identity, NodeSize, MoveSnap, SphereCap, position =>
+            {
+                Target.StartPoint = position;
+                Target.Rebuild();
+            });
+
+            DrawFreeMoveHandle(Target.EndPoint, Quaternion.identity, NodeSize, MoveSnap, SphereCap, position =>
+            {
+                Target.EndPoint = position;
+                Target.Rebuild();
+            });
 
             Handles.color = Color.green;
-            DrawAnchorHandle(Target.StartTangentPoint, position => { Target.StartTangentPoint = position; });
-            DrawAnchorHandle(Target.EndTangentPoint, position => { Target.EndTangentPoint = position; });
+            DrawFreeMoveHandle(Target.StartTangentPoint, Quaternion.identity, NodeSize, MoveSnap, SphereCap, position =>
+            {
+                Target.StartTangentPoint = position;
+                Target.Rebuild();
+            });
+
+            DrawFreeMoveHandle(Target.EndTangentPoint, Quaternion.identity, NodeSize, MoveSnap, SphereCap, position =>
+            {
+                Target.EndTangentPoint = position;
+                Target.Rebuild();
+            });
 
             Handles.DrawLine(Target.StartPoint, Target.StartTangentPoint);
             Handles.DrawLine(Target.EndPoint, Target.EndTangentPoint);
-        }
-
-        protected void DrawAnchorHandle(Vector3 anchor, Action<Vector3> callback)
-        {
-            EditorGUI.BeginChangeCheck();
-            var position = Handles.FreeMoveHandle(anchor, Quaternion.identity, HandleUtility.GetHandleSize(anchor) * AnchorSize, MoveSnap, SphereCap);
-            if (EditorGUI.EndChangeCheck())
-            {
-                Undo.RecordObject(Target, "Change Anchor Position");
-                callback.Invoke(position);
-                Target.Rebuild();
-                MarkSceneDirty();
-            }
         }
         #endregion
     }

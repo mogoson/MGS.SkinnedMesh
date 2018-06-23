@@ -13,13 +13,13 @@
 using Mogoson.Curve;
 using UnityEngine;
 
-namespace Mogoson.FlexiblePipe
+namespace Mogoson.CurvePipe
 {
     /// <summary>
     /// Render dynamic pipe mesh base on cubic bezier curve.
     /// </summary>
-    [AddComponentMenu("Mogoson/FlexiblePipe/BezierPipe")]
-    public class BezierPipe : CurvePipe
+    [AddComponentMenu("Mogoson/CurvePipe/BezierPipe")]
+    public class BezierPipe : MonoCurvePipe
     {
         #region Field and Property
         /// <summary>
@@ -78,9 +78,9 @@ namespace Mogoson.FlexiblePipe
         /// </summary>
         /// <param name="time">Time of pipe center curve.</param>
         /// <returns>Local point on pipe curve at time.</returns>
-        protected override Vector3 GetLocalPoint(float time)
+        protected override Vector3 GetLocalPointAt(float time)
         {
-            return CubicBezierCurve.GetPoint(anchor, time);
+            return CubicBezierCurve.GetPointAt(anchor, time);
         }
         #endregion
     }

@@ -2,7 +2,7 @@
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  CurvePipeEditor.cs
- *  Description  :  Editor for CurvePipe component.
+ *  Description  :  Editor for MonoCurvePipe component.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -10,18 +10,17 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Mogoson.SkinnedMesh;
+using Mogoson.Skin;
 using UnityEditor;
 
-namespace Mogoson.FlexiblePipe
+namespace Mogoson.CurvePipe
 {
-    [CustomEditor(typeof(CurvePipe), true)]
+    [CustomEditor(typeof(MonoCurvePipe), true)]
     public class CurvePipeEditor : SkinEditor
     {
         #region Field and Property
-        protected new CurvePipe Target { get { return target as CurvePipe; } }
+        protected new MonoCurvePipe Target { get { return target as MonoCurvePipe; } }
         protected const float Delta = 0.05f;
-        protected const float AnchorSize = 0.125f;
         #endregion
 
         #region Protected Method
@@ -30,7 +29,7 @@ namespace Mogoson.FlexiblePipe
             Handles.color = Blue;
             for (float t = 0; t < Target.MaxTime; t += Delta)
             {
-                Handles.DrawLine(Target.GetWorldPoint(t), Target.GetWorldPoint(t + Delta));
+                Handles.DrawLine(Target.GetPointAt(t), Target.GetPointAt(t + Delta));
             }
         }
         #endregion

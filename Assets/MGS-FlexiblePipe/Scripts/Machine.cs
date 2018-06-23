@@ -10,6 +10,7 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using Mogoson.CurvePipe;
 using UnityEngine;
 
 namespace Mogoson.FlexiblePipe

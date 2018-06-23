@@ -2,7 +2,7 @@
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  SkinEditor.cs
- *  Description  :  Editor for Skin component.
+ *  Description  :  Editor for MonoSkin component.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -14,13 +14,13 @@ using Mogoson.UEditor;
 using UnityEditor;
 using UnityEngine;
 
-namespace Mogoson.SkinnedMesh
+namespace Mogoson.Skin
 {
-    [CustomEditor(typeof(Skin), true)]
+    [CustomEditor(typeof(MonoSkin), true)]
     public class SkinEditor : GenericEditor
     {
         #region Field and Property
-        protected Skin Target { get { return target as Skin; } }
+        protected MonoSkin Target { get { return target as MonoSkin; } }
         #endregion
 
         #region Protected Method

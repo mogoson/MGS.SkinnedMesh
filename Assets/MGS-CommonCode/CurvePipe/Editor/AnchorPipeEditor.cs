@@ -13,7 +13,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Mogoson.FlexiblePipe
+namespace Mogoson.CurvePipe
 {
     [CustomEditor(typeof(AnchorPipe), true)]
     [CanEditMultipleObjects]
@@ -27,10 +27,10 @@ namespace Mogoson.FlexiblePipe
         protected override void OnSceneGUI()
         {
             Handles.color = Blue;
-            var constDelta = Mathf.Max(Delta, Delta * HandleUtility.GetHandleSize(Target.transform.position));
-            for (float t = 0; t < Target.MaxTime; t += constDelta)
+            var scaleDelta = Mathf.Max(Delta, Delta * GetHandleSize(Target.transform.position));
+            for (float t = 0; t < Target.MaxTime; t += scaleDelta)
             {
-                Handles.DrawLine(Target.GetWorldPoint(t), Target.GetWorldPoint(Mathf.Min(Target.MaxTime, t + constDelta)));
+                Handles.DrawLine(Target.GetPointAt(t), Target.GetPointAt(Mathf.Min(Target.MaxTime, t + scaleDelta)));
             }
 
             if (Application.isPlaying)
@@ -39,50 +39,41 @@ namespace Mogoson.FlexiblePipe
             for (int i = 0; i < Target.AnchorsCount; i++)
             {
                 var anchorItem = Target.GetAnchorAt(i);
-                var handleSize = HandleUtility.GetHandleSize(anchorItem);
-                var constSize = handleSize * AnchorSize;
-
                 if (Event.current.alt)
                 {
                     Handles.color = Color.green;
-                    if (Handles.Button(anchorItem, Quaternion.identity, constSize, constSize, SphereCap))
+                    DrawAdaptiveButton(anchorItem, Quaternion.identity, NodeSize, NodeSize, SphereCap, () =>
                     {
-                        var offset = Vector3.forward * handleSize;
+                        var offset = Vector3.zero;
                         if (i > 0)
-                            offset = (anchorItem - Target.GetAnchorAt(i - 1)).normalized * handleSize;
+                            offset = (anchorItem - Target.GetAnchorAt(i - 1)).normalized * GetHandleSize(anchorItem);
+                        else
+                            offset = Vector3.forward * GetHandleSize(anchorItem);
 
-                        Undo.RecordObject(Target, "Insert Anchor");
                         Target.InsertAnchor(i + 1, anchorItem + offset);
                         Target.Rebuild();
-                        MarkSceneDirty();
-                    }
+                    });
                 }
                 else if (Event.current.shift)
                 {
                     Handles.color = Color.red;
-                    if (Handles.Button(anchorItem, Quaternion.identity, constSize, constSize, SphereCap))
+                    DrawAdaptiveButton(anchorItem, Quaternion.identity, NodeSize, NodeSize, SphereCap, () =>
                     {
                         if (Target.AnchorsCount > 1)
                         {
-                            Undo.RecordObject(Target, "Remove Anchor");
                             Target.RemoveAnchorAt(i);
                             Target.Rebuild();
-                            MarkSceneDirty();
                         }
-                    }
+                    });
                 }
                 else
                 {
                     Handles.color = Blue;
-                    EditorGUI.BeginChangeCheck();
-                    var position = Handles.FreeMoveHandle(anchorItem, Quaternion.identity, constSize, MoveSnap, SphereCap);
-                    if (EditorGUI.EndChangeCheck())
+                    DrawFreeMoveHandle(anchorItem, Quaternion.identity, NodeSize, MoveSnap, SphereCap, position =>
                     {
-                        Undo.RecordObject(Target, "Change Anchor Position");
                         Target.SetAnchorAt(i, position);
                         Target.Rebuild();
-                        MarkSceneDirty();
-                    }
+                    });
                 }
             }
         }

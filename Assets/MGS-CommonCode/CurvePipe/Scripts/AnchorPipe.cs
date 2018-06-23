@@ -2,7 +2,8 @@
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  AnchorPipe.cs
- *  Description  :  Render dynamic pipe mesh base on anchor vector animation curve.
+ *  Description  :  Render dynamic pipe mesh base on anchor vector
+ *                  animation curve.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -14,13 +15,13 @@ using Mogoson.Curve;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mogoson.FlexiblePipe
+namespace Mogoson.CurvePipe
 {
     /// <summary>
     /// Render dynamic pipe mesh base on anchor vector animation curve.
     /// </summary>
-    [AddComponentMenu("Mogoson/FlexiblePipe/AnchorPipe")]
-    public class AnchorPipe : CurvePipe
+    [AddComponentMenu("Mogoson/CurvePipe/AnchorPipe")]
+    public class AnchorPipe : MonoCurvePipe
     {
         #region Field and Property
         /// <summary>
@@ -62,9 +63,9 @@ namespace Mogoson.FlexiblePipe
         /// </summary>
         /// <param name="time">Time of pipe center curve.</param>
         /// <returns>Local point on pipe curve at time.</returns>
-        protected override Vector3 GetLocalPoint(float time)
+        protected override Vector3 GetLocalPointAt(float time)
         {
-            return curve.Evaluate(time);
+            return curve.GetPointAt(time);
         }
         #endregion
 

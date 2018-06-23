@@ -1,7 +1,7 @@
 ﻿/*************************************************************************
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  Skin.cs
+ *  File         :  MonoSkin.cs
  *  Description  :  Define Skin to render dynamic mesh.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
@@ -12,29 +12,44 @@
 
 using UnityEngine;
 
-namespace Mogoson.SkinnedMesh
+namespace Mogoson.Skin
 {
     /// <summary>
     /// Render dynamic skinned mesh.
     /// </summary>
     [RequireComponent(typeof(SkinnedMeshRenderer))]
-    public abstract class Skin : MonoBehaviour
+    public abstract class MonoSkin : MonoBehaviour, ISkin
     {
         #region Field and Property
         /// <summary>
         /// Skinned mesh renderer of skin.
         /// </summary>
-        public SkinnedMeshRenderer Renderer { protected set; get; }
+        protected SkinnedMeshRenderer meshRenderer;
 
         /// <summary>
         /// Mesh collider of skin.
         /// </summary>
-        public MeshCollider Collider { protected set; get; }
+        protected MeshCollider meshCollider;
 
         /// <summary>
         /// Mesh of skin.
         /// </summary>
-        public Mesh Mesh { protected set; get; }
+        protected Mesh mesh;
+
+        /// <summary>
+        /// Skinned mesh renderer of skin.
+        /// </summary>
+        public Renderer Renderer { get { return meshRenderer; } }
+
+        /// <summary>
+        /// Mesh collider of skin.
+        /// </summary>
+        public Collider Collider { get { return meshCollider; } }
+
+        /// <summary>
+        /// Mesh of skin.
+        /// </summary>
+        public Mesh Mesh { get { return mesh; } }
         #endregion
 
         #region Protected Method
@@ -45,10 +60,10 @@ namespace Mogoson.SkinnedMesh
 
         protected virtual void Awake()
         {
-            Renderer = GetComponent<SkinnedMeshRenderer>();
-            Collider = GetComponent<MeshCollider>();
+            meshRenderer = GetComponent<SkinnedMeshRenderer>();
+            meshCollider = GetComponent<MeshCollider>();
 
-            Mesh = new Mesh { name = "Skin" };
+            mesh = new Mesh { name = "Skin" };
             Rebuild();
         }
 
@@ -71,18 +86,18 @@ namespace Mogoson.SkinnedMesh
         /// </summary>
         public virtual void Rebuild()
         {
-            Mesh.Clear();
-            Mesh.vertices = CreateVertices();
-            Mesh.triangles = CreateTriangles();
+            mesh.Clear();
+            mesh.vertices = CreateVertices();
+            mesh.triangles = CreateTriangles();
 
-            Mesh.RecalculateNormals();
-            Mesh.RecalculateBounds();
+            mesh.RecalculateNormals();
+            mesh.RecalculateBounds();
 
-            Renderer.sharedMesh = Mesh;
-            Renderer.localBounds = Mesh.bounds;
+            meshRenderer.sharedMesh = mesh;
+            meshRenderer.localBounds = mesh.bounds;
 
-            if (Collider)
-                Collider.sharedMesh = Mesh;
+            if (meshCollider)
+                meshCollider.sharedMesh = mesh;
         }
 
         /// <summary>
@@ -90,14 +105,14 @@ namespace Mogoson.SkinnedMesh
         /// </summary>
         public void AttachCollider()
         {
-            if (Collider)
+            if (meshCollider)
                 return;
             else
             {
                 var collider = GetComponent<MeshCollider>();
                 if (collider == null)
                     collider = gameObject.AddComponent<MeshCollider>();
-                Collider = collider;
+                this.meshCollider = collider;
             }
         }
 
@@ -106,8 +121,11 @@ namespace Mogoson.SkinnedMesh
         /// </summary>
         public void RemoveCollider()
         {
-            if (Collider)
-                Destroy(Collider);
+            if (meshCollider)
+            {
+                Destroy(meshCollider);
+                meshCollider = null;
+            }
         }
 
 #if UNITY_EDITOR
@@ -116,14 +134,14 @@ namespace Mogoson.SkinnedMesh
         /// </summary>
         public void RebuildInEditor()
         {
-            if (Renderer == null)
-                Renderer = GetComponent<SkinnedMeshRenderer>();
+            if (meshRenderer == null)
+                meshRenderer = GetComponent<SkinnedMeshRenderer>();
 
-            if (Collider == null)
-                Collider = GetComponent<MeshCollider>();
+            if (meshCollider == null)
+                meshCollider = GetComponent<MeshCollider>();
 
-            if (Mesh == null)
-                Mesh = new Mesh { name = "Skin" };
+            if (mesh == null)
+                mesh = new Mesh { name = "Skin" };
 
             Rebuild();
         }

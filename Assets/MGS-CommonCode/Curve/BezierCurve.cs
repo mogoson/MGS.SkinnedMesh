@@ -140,7 +140,7 @@ namespace Mogoson.Curve
     /// <summary>
     /// Linear bezier curve.
     /// </summary>
-    public struct LinearBezierCurve
+    public struct LinearBezierCurve : ICurve
     {
         #region Field and Property
         /// <summary>
@@ -164,9 +164,9 @@ namespace Mogoson.Curve
         /// </summary>
         /// <param name="t">t is in the range(0~1).</param>
         /// <returns>Point on curve.</returns>
-        public Vector3 GetPoint(float t)
+        public Vector3 GetPointAt(float t)
         {
-            return GetPoint(anchor, t);
+            return GetPointAt(anchor, t);
         }
         #endregion
 
@@ -177,7 +177,7 @@ namespace Mogoson.Curve
         /// <param name="anchor">Anchor points of curve.</param>
         /// <param name="t">t is in the range(0~1).</param>
         /// <returns>Point on curve.</returns>
-        public static Vector3 GetPoint(LinearBezierAnchor anchor, float t)
+        public static Vector3 GetPointAt(LinearBezierAnchor anchor, float t)
         {
             return (1 - t) * anchor.start + t * anchor.end;
         }
@@ -187,7 +187,7 @@ namespace Mogoson.Curve
     /// <summary>
     /// Quadratic bezier curve.
     /// </summary>
-    public struct QuadraticBezierCurve
+    public struct QuadraticBezierCurve : ICurve
     {
         #region Field and Property
         /// <summary>
@@ -211,9 +211,9 @@ namespace Mogoson.Curve
         /// </summary>
         /// <param name="t">t is in the range(0~1).</param>
         /// <returns>Point on curve.</returns>
-        public Vector3 GetPoint(float t)
+        public Vector3 GetPointAt(float t)
         {
-            return GetPoint(anchor, t);
+            return GetPointAt(anchor, t);
         }
         #endregion
 
@@ -224,7 +224,7 @@ namespace Mogoson.Curve
         /// <param name="anchor">Anchor points of curve.</param>
         /// <param name="t">t is in the range(0~1).</param>
         /// <returns>Point on curve.</returns>
-        public static Vector3 GetPoint(QuadraticBezierAnchor anchor, float t)
+        public static Vector3 GetPointAt(QuadraticBezierAnchor anchor, float t)
         {
             return Mathf.Pow(1 - t, 2) * anchor.start + 2 * t * (1 - t) * anchor.tangent + Mathf.Pow(t, 2) * anchor.end;
         }
@@ -234,7 +234,7 @@ namespace Mogoson.Curve
     /// <summary>
     /// Cubic bezier curve.
     /// </summary>
-    public struct CubicBezierCurve
+    public struct CubicBezierCurve : ICurve
     {
         #region Field and Property
         /// <summary>
@@ -258,9 +258,9 @@ namespace Mogoson.Curve
         /// </summary>
         /// <param name="t">t is in the range(0~1).</param>
         /// <returns>Point on curve.</returns>
-        public Vector3 GetPoint(float t)
+        public Vector3 GetPointAt(float t)
         {
-            return GetPoint(anchor, t);
+            return GetPointAt(anchor, t);
         }
         #endregion
 
@@ -271,7 +271,7 @@ namespace Mogoson.Curve
         /// <param name="anchor">Anchor points of curve.</param>
         /// <param name="t">t is in the range(0~1).</param>
         /// <returns>Point on curve.</returns>
-        public static Vector3 GetPoint(CubicBezierAnchor anchor, float t)
+        public static Vector3 GetPointAt(CubicBezierAnchor anchor, float t)
         {
             return Mathf.Pow(1 - t, 3) * anchor.start + 3 * t * Mathf.Pow(1 - t, 2) * anchor.startTangent +
                 3 * (1 - t) * Mathf.Pow(t, 2) * anchor.endTangent + Mathf.Pow(t, 3) * anchor.end;

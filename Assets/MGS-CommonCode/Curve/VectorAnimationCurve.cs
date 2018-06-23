@@ -55,7 +55,7 @@ namespace Mogoson.Curve
     /// <summary>
     /// AnimationCurve in three dimensional space.
     /// </summary>
-    public class VectorAnimationCurve
+    public class VectorAnimationCurve : ICurve
     {
         #region Field and Property
         public VectorKeyframe this[int index]
@@ -128,11 +128,11 @@ namespace Mogoson.Curve
         }
 
         /// <summary>
-        /// Evaluate the curve at time.
+        /// Get point by evaluate the curve at time.
         /// </summary>
         /// <param name="time">The time within the curve you want to evaluate (the horizontal axis in the curve graph).</param>
         /// <returns>The value of the curve, at the point in time specified.</returns>
-        public Vector3 Evaluate(float time)
+        public Vector3 GetPointAt(float time)
         {
             return new Vector3(xCurve.Evaluate(time), yCurve.Evaluate(time), zCurve.Evaluate(time));
         }
