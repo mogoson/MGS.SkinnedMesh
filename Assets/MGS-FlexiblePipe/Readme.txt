@@ -1,7 +1,7 @@
 ﻿==========================================================================
   Copyright © 2018 Mogoson. All rights reserved.
   Name: MGS-FlexiblePipe
-  Author: Mogoson   Version: 0.1.0   Date: 3/20/2018
+  Author: Mogoson   Version: 0.1.1   Date: 6/24/2018
 ==========================================================================
   [Summary]
     Unity plugin for create flexible pipe in scene.
