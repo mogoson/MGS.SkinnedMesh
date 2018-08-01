@@ -21,14 +21,14 @@ namespace Mogoson.CurvePipe
     {
         #region Field and Property
         /// <summary>
-        /// Segment of around pipe.
+        /// Polygon of pipe cross section.
         /// </summary>
-        int AroundSegment { set; get; }
+        int Polygon { set; get; }
 
         /// <summary>
-        /// Segment of extend pipe.
+        /// Segment length of subdivide pipe.
         /// </summary>
-        int ExtendSegment { set; get; }
+        float Segment { set; get; }
 
         /// <summary>
         /// Radius of pipe mesh.
@@ -39,11 +39,6 @@ namespace Mogoson.CurvePipe
         /// Is seal at both ends of pipe?
         /// </summary>
         bool Seal { set; get; }
-
-        /// <summary>
-        /// Max time of pipe center curve.
-        /// </summary>
-        float MaxTime { get; }
         #endregion
     }
 }

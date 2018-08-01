@@ -25,6 +25,11 @@ namespace Mogoson.CurvePipe
     {
         #region Field and Property
         /// <summary>
+        /// Pipe curve is close?
+        /// </summary>
+        public bool close = false;
+
+        /// <summary>
         /// Anchors of pipe curve.
         /// </summary>
         [SerializeField]
@@ -38,35 +43,14 @@ namespace Mogoson.CurvePipe
         public int AnchorsCount { get { return anchors.Count; } }
 
         /// <summary>
-        /// Max time of pipe curve.
+        /// Curve for pipe.
         /// </summary>
-        public override float MaxTime
-        {
-            get
-            {
-                if (curve.Length > 0)
-                    return curve[curve.Length - 1].time;
-                else
-                    return 0;
-            }
-        }
+        protected override ICurve Curve { get { return curve; } }
 
         /// <summary>
         /// VectorAnimationCurve of pipe.
         /// </summary>
-        protected VectorAnimationCurve curve = new VectorAnimationCurve();
-        #endregion
-
-        #region Protected Method
-        /// <summary>
-        /// Get local point from center curve of pipe at time.
-        /// </summary>
-        /// <param name="time">Time of pipe center curve.</param>
-        /// <returns>Local point on pipe curve at time.</returns>
-        protected override Vector3 GetLocalPointAt(float time)
-        {
-            return curve.GetPointAt(time);
-        }
+        protected UHermiteCurve curve = new UHermiteCurve();
         #endregion
 
         #region Public Method
@@ -75,7 +59,7 @@ namespace Mogoson.CurvePipe
         /// </summary>
         public override void Rebuild()
         {
-            curve = VectorAnimationCurve.FromAnchors(anchors.ToArray());
+            curve = UHermiteCurve.FromAnchors(anchors.ToArray(), close);
             base.Rebuild();
         }
 

@@ -28,9 +28,9 @@ namespace Mogoson.CurvePipe
         {
             Handles.color = Blue;
             var scaleDelta = Mathf.Max(Delta, Delta * GetHandleSize(Target.transform.position));
-            for (float t = 0; t < Target.MaxTime; t += scaleDelta)
+            for (float t = 0; t < Target.MaxKey; t += scaleDelta)
             {
-                Handles.DrawLine(Target.GetPointAt(t), Target.GetPointAt(Mathf.Min(Target.MaxTime, t + scaleDelta)));
+                Handles.DrawLine(Target.GetPointAt(t), Target.GetPointAt(Mathf.Min(Target.MaxKey, t + scaleDelta)));
             }
 
             if (Application.isPlaying)

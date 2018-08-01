@@ -31,11 +31,6 @@ namespace Mogoson.CurvePipe
             new Vector3(3, 1, 3), new Vector3(1, 1, 2), new Vector3(3, 1, 2));
 
         /// <summary>
-        /// Max time of pipe curve.
-        /// </summary>
-        public override float MaxTime { get { return 1.0f; } }
-
-        /// <summary>
         /// Start point of pipe curve.
         /// </summary>
         public Vector3 StartPoint
@@ -70,17 +65,26 @@ namespace Mogoson.CurvePipe
             set { anchor.endTangent = transform.InverseTransformPoint(value); }
             get { return transform.TransformPoint(anchor.endTangent); }
         }
+
+        /// <summary>
+        /// Curve for pipe.
+        /// </summary>
+        protected override ICurve Curve { get { return curve; } }
+
+        /// <summary>
+        /// Curve of pipe.
+        /// </summary>
+        protected CubicBezierCurve curve = new CubicBezierCurve();
         #endregion
 
-        #region Protected Method
+        #region Public Method
         /// <summary>
-        /// Get local point from center curve of pipe at time.
+        /// Rebuild the mesh of pipe.
         /// </summary>
-        /// <param name="time">Time of pipe center curve.</param>
-        /// <returns>Local point on pipe curve at time.</returns>
-        protected override Vector3 GetLocalPointAt(float time)
+        public override void Rebuild()
         {
-            return CubicBezierCurve.GetPointAt(anchor, time);
+            curve.anchor = anchor;
+            base.Rebuild();
         }
         #endregion
     }
