@@ -102,7 +102,7 @@ namespace Mogoson.CurvePipe
         /// <summary>
         /// Radian of circle.
         /// </summary>
-        protected const float CircleRadian = Mathf.PI * 2;
+        protected const float CircleRadian = 2 * Mathf.PI;
 
         /// <summary>
         /// Delta to calculate tangent.
@@ -124,7 +124,7 @@ namespace Mogoson.CurvePipe
         /// <summary>
         /// Create the vertices of pipe mesh.
         /// </summary>
-        /// <returns>Vertices of pipe mesh.</returns>
+        /// <returns>Vertices array.</returns>
         protected override Vector3[] CreateVertices()
         {
             var vertices = new List<Vector3>();

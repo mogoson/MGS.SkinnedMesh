@@ -1,7 +1,7 @@
 /*************************************************************************
  *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  USinCurve.cs
+ *  File         :  SinCurve.cs
  *  Description  :  Define sin curve for unity.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
@@ -10,21 +10,72 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Mogoson.Mathematics;
+using System;
 using UnityEngine;
 
 namespace Mogoson.Curve
 {
     /// <summary>
-    ///  Sin curve for unity.
+    /// Args of sin.
     /// </summary>
-    public class USinCurve : SinCurve, ICurve
+    [Serializable]
+    public struct SinArgs
+    {
+        #region Field and Property
+        /// <summary>
+        /// Amplitude of sin.
+        /// </summary>
+        public float amplitude;
+
+        /// <summary>
+        /// Angular of sin.
+        /// </summary>
+        public float angular;
+
+        /// <summary>
+        /// Initial phase of sin.
+        /// </summary>
+        public float phase;
+
+        /// <summary>
+        /// Setover of sin.
+        /// </summary>
+        public float setover;
+        #endregion
+
+        #region Public Method
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="amplitude">Amplitude of sin.</param>
+        /// <param name="angular">Angular of sin.</param>
+        /// <param name="phase">Initial phase of sin.</param>
+        /// <param name="setover">Setover of sin.</param>
+        public SinArgs(float amplitude, float angular, float phase, float setover)
+        {
+            this.amplitude = amplitude;
+            this.angular = angular;
+            this.phase = phase;
+            this.setover = setover;
+        }
+        #endregion
+    }
+
+    /// <summary>
+    ///  Sin curve.
+    /// </summary>
+    public class SinCurve : ICurve
     {
         #region Field and Property
         /// <summary>
         /// Delta to lerp key.
         /// </summary>
         protected const float Delta = 0.05f;
+
+        /// <summary>
+        /// Args of sin curve.
+        /// </summary>
+        public SinArgs args;
 
         /// <summary>
         /// Length of sin curve.
@@ -52,13 +103,19 @@ namespace Mogoson.Curve
         /// <summary>
         /// Constructor.
         /// </summary>
-        public USinCurve() : base() { }
+        public SinCurve()
+        {
+            args = new SinArgs();
+        }
 
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="args">Args of sin curve.</param>
-        public USinCurve(SinArgs args) : base(args) { }
+        public SinCurve(SinArgs args)
+        {
+            this.args = args;
+        }
 
         /// <summary>
         /// Get point on sin curve at x.
@@ -73,6 +130,17 @@ namespace Mogoson.Curve
 
         #region Static Method
         /// <summary>
+        /// Evaluate the value of sin curve at x.
+        /// </summary>
+        /// <param name="args">Args of sin curve.</param>
+        /// <param name="x">Value of x axis.</param>
+        /// <returns>The value of sin curve at x.</returns>
+        public static float Evaluate(SinArgs args, double x)
+        {
+            return args.amplitude * (float)Math.Sin(args.angular * x + args.phase) + args.setover;
+        }
+
+        /// <summary>
         /// Get point on sin curve at x.
         /// </summary>
         /// <param name="args">Args of sin curve.</param>
@@ -80,7 +148,7 @@ namespace Mogoson.Curve
         /// <returns>The point on sin curve at x.</returns>
         public static Vector3 GetPointAt(SinArgs args, float x)
         {
-            return new Vector3(x, (float)Evaluate(args, x));
+            return new Vector3(x, Evaluate(args, x));
         }
         #endregion
     }

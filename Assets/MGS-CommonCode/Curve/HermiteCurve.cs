@@ -1,7 +1,7 @@
 /*************************************************************************
  *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  UHermiteCurve.cs
+ *  File         :  HermiteCurve.cs
  *  Description  :  Hermite curve in three dimensional space.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
@@ -55,7 +55,7 @@ namespace Mogoson.Curve
     /// <summary>
     /// Hermite curve in three dimensional space.
     /// </summary>
-    public class UHermiteCurve : ICurve
+    public class HermiteCurve : ICurve
     {
         #region Indexer
         public VectorKeyFrame this[int index]
@@ -136,7 +136,7 @@ namespace Mogoson.Curve
         /// <summary>
         /// Constructor.
         /// </summary>
-        public UHermiteCurve()
+        public HermiteCurve()
         {
             xCurve = new AnimationCurve();
             yCurve = new AnimationCurve();
@@ -219,11 +219,11 @@ namespace Mogoson.Curve
         /// Create a curve base on anchors.
         /// </summary>
         /// <param name="anchors">Anchor points of curve.</param>
-        /// <param name="close">Curve is close.</param>
+        /// <param name="close">Curve is close?</param>
         /// <returns>New curve.</returns>
-        public static UHermiteCurve FromAnchors(Vector3[] anchors, bool close = false)
+        public static HermiteCurve FromAnchors(Vector3[] anchors, bool close = false)
         {
-            var curve = new UHermiteCurve();
+            var curve = new HermiteCurve();
 
             //No anchor.
             if (anchors == null || anchors.Length == 0)

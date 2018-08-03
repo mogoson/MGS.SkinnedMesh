@@ -11,7 +11,6 @@
  *************************************************************************/
 
 using Mogoson.Curve;
-using Mogoson.Mathematics;
 using UnityEngine;
 
 namespace Mogoson.CurvePipe
@@ -41,7 +40,7 @@ namespace Mogoson.CurvePipe
         /// <summary>
         /// Curve of pipe.
         /// </summary>
-        protected USinCurve curve = new USinCurve();
+        protected SinCurve curve = new SinCurve();
         #endregion
 
         #region Public Method

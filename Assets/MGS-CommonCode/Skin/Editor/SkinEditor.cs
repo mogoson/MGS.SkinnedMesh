@@ -28,14 +28,14 @@ namespace Mogoson.Skin
         {
             if (!Application.isPlaying)
             {
-                Target.RebuildInEditor();
-                Undo.undoRedoPerformed = () => { Target.RebuildInEditor(); };
+                Target.Rebuild();
+                Undo.undoRedoPerformed = () => { Target.Rebuild(); };
             }
         }
 
         protected virtual void OnDisable()
         {
-            EditorUtility.UnloadUnusedAssetsImmediate(true);
+            EditorUtility.UnloadUnusedAssetsImmediate(false);
             Undo.undoRedoPerformed = null;
         }
         #endregion
@@ -46,7 +46,7 @@ namespace Mogoson.Skin
             EditorGUI.BeginChangeCheck();
             DrawDefaultInspector();
             if (EditorGUI.EndChangeCheck())
-                Target.RebuildInEditor();
+                Target.Rebuild();
         }
         #endregion
     }

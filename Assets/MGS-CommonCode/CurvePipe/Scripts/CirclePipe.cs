@@ -44,8 +44,8 @@ namespace Mogoson.CurvePipe
         /// </summary>
         public override void Rebuild()
         {
-            curve.ellipse.semiMinorAxis = extendRadius;
-            curve.ellipse.semiMajorAxis = extendRadius;
+            curve.args.semiMinorAxis = extendRadius;
+            curve.args.semiMajorAxis = extendRadius;
             base.Rebuild();
         }
         #endregion

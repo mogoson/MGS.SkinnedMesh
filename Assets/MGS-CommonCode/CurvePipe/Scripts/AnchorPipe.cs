@@ -2,8 +2,7 @@
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  AnchorPipe.cs
- *  Description  :  Render dynamic pipe mesh base on anchor vector
- *                  animation curve.
+ *  Description  :  Render dynamic pipe mesh base on anchor curve.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -18,7 +17,7 @@ using UnityEngine;
 namespace Mogoson.CurvePipe
 {
     /// <summary>
-    /// Render dynamic pipe mesh base on anchor vector animation curve.
+    /// Render dynamic pipe mesh base on anchor curve.
     /// </summary>
     [AddComponentMenu("Mogoson/CurvePipe/AnchorPipe")]
     public class AnchorPipe : MonoCurvePipe
@@ -48,9 +47,9 @@ namespace Mogoson.CurvePipe
         protected override ICurve Curve { get { return curve; } }
 
         /// <summary>
-        /// VectorAnimationCurve of pipe.
+        /// Anchor curve of pipe.
         /// </summary>
-        protected UHermiteCurve curve = new UHermiteCurve();
+        protected HermiteCurve curve = new HermiteCurve();
         #endregion
 
         #region Public Method
@@ -59,7 +58,7 @@ namespace Mogoson.CurvePipe
         /// </summary>
         public override void Rebuild()
         {
-            curve = UHermiteCurve.FromAnchors(anchors.ToArray(), close);
+            curve = HermiteCurve.FromAnchors(anchors.ToArray(), close);
             base.Rebuild();
         }
 
