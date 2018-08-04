@@ -15,6 +15,7 @@ using UnityEngine;
 
 namespace Mogoson.FlexiblePipe
 {
+    [AddComponentMenu("Mogoson/FlexiblePipe/Machine")]
     public class Machine : MonoBehaviour
     {
         #region Field and Property
