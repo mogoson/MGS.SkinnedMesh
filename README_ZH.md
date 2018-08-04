@@ -34,6 +34,22 @@
 
 ![AnchorPipeEditor](./Attachments/README_Image/AnchorPipeEditor.gif)
 
+- Circle Pipe
+
+![CirclePipe](./Attachments/README_Image/CirclePipe.gif)
+
+- Ellipse Pipe
+
+![EllipsePipe](./Attachments/README_Image/EllipsePipe.gif)
+
+- Sin Pipe
+
+![SinPipe](./Attachments/README_Image/SinPipe.gif)
+
+- Helix Pipe
+
+![HelixPipe](./Attachments/README_Image/HelixPipe.gif)
+
 - Machine Cable
 
 ![MachineCable](./Attachments/README_Image/MachineCable.gif)
