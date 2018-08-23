@@ -49,31 +49,31 @@
 ## 预览
 - Bezier Pipe Editor
 
-![BezierPipeEditor](./Attachments/README_Image/BezierPipeEditor.gif)
+![Bezier Pipe Editor](./Attachments/README_Image/BezierPipeEditor.gif)
 
 - Anchor Pipe Editor
 
-![AnchorPipeEditor](./Attachments/README_Image/AnchorPipeEditor.gif)
+![Anchor Pipe Editor](./Attachments/README_Image/AnchorPipeEditor.gif)
 
 - Circle Pipe
 
-![CirclePipe](./Attachments/README_Image/CirclePipe.gif)
+![Circle Pipe](./Attachments/README_Image/CirclePipe.gif)
 
 - Ellipse Pipe
 
-![EllipsePipe](./Attachments/README_Image/EllipsePipe.gif)
+![Ellipse Pipe](./Attachments/README_Image/EllipsePipe.gif)
 
 - Sin Pipe
 
-![SinPipe](./Attachments/README_Image/SinPipe.gif)
+![Sin Pipe](./Attachments/README_Image/SinPipe.gif)
 
 - Helix Pipe
 
-![HelixPipe](./Attachments/README_Image/HelixPipe.gif)
+![Helix Pipe](./Attachments/README_Image/HelixPipe.gif)
 
 - Machine Cable
 
-![MachineCable](./Attachments/README_Image/MachineCable.gif)
+![Machine Cable](./Attachments/README_Image/MachineCable.gif)
 
 ## 联系
-- 如果你有任何问题或者建议，欢迎通过mogoson@qq.com联系我。
+- 如果你有任何问题或者建议，欢迎通过mogoson@outlook.com联系我。
