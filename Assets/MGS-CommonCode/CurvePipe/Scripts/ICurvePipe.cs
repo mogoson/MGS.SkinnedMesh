@@ -11,13 +11,14 @@
  *************************************************************************/
 
 using Mogoson.Curve;
+using Mogoson.Skin;
 
 namespace Mogoson.CurvePipe
 {
     /// <summary>
     /// Interface of curve pipe.
     /// </summary>
-    public interface ICurvePipe : ICurve
+    public interface ICurvePipe : ICurve, ISkin
     {
         #region Field and Property
         /// <summary>
