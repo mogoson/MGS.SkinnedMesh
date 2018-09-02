@@ -107,7 +107,10 @@ namespace Mogoson.Skin
             meshRenderer.localBounds = mesh.bounds;
 
             if (meshCollider)
+            {
+                meshCollider.sharedMesh = null;
                 meshCollider.sharedMesh = mesh;
+            }
         }
 
         /// <summary>
@@ -119,10 +122,9 @@ namespace Mogoson.Skin
                 return;
             else
             {
-                var collider = GetComponent<MeshCollider>();
-                if (collider == null)
-                    collider = gameObject.AddComponent<MeshCollider>();
-                this.meshCollider = collider;
+                meshCollider = GetComponent<MeshCollider>();
+                if (meshCollider == null)
+                    meshCollider = gameObject.AddComponent<MeshCollider>();
             }
         }
 
