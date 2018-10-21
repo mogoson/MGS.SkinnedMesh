@@ -10,7 +10,7 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Mogoson.CurvePipe;
+using Mogoson.CurveHose;
 using UnityEngine;
 
 namespace Mogoson.FlexiblePipe
@@ -23,7 +23,7 @@ namespace Mogoson.FlexiblePipe
         public float offset = 0.75f;
         public float speed = 1.0f;
 
-        public BezierPipe cable;
+        public BezierHose cable;
         public Transform joint;
         public Transform tangent;
 

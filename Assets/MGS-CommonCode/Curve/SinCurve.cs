@@ -68,9 +68,9 @@ namespace Mogoson.Curve
     {
         #region Field and Property
         /// <summary>
-        /// Delta to lerp key.
+        /// Coefficient of delta to lerp key.
         /// </summary>
-        protected const float Delta = 0.05f;
+        protected const float Coefficient = 0.05f;
 
         /// <summary>
         /// Args of sin curve.
@@ -85,9 +85,10 @@ namespace Mogoson.Curve
             get
             {
                 var length = 0.0f;
-                for (float key = 0; key < MaxKey; key += Delta)
+                var delta = MaxKey * Coefficient;
+                for (float key = 0; key < MaxKey; key += delta)
                 {
-                    length += Vector3.Distance(GetPointAt(key), GetPointAt(key + Delta));
+                    length += Vector3.Distance(GetPointAt(key), GetPointAt(key + delta));
                 }
                 return length;
             }
