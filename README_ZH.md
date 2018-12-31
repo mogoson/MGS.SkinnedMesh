@@ -1,4 +1,4 @@
-﻿# MGS-FlexiblePipe
+﻿# MGS-FlexibleHose
 - [English Manual](./README.md)
 
 ## 概述
@@ -25,51 +25,51 @@
 
 - Skin : 渲染蒙皮网格。
 
-- CurvePipe : 基于曲线创建动态软管。
+- CurveHose : 基于曲线创建动态软管。
 
-- BezierPipe : 基于贝塞尔曲线创建动态软管。
+- BezierHose : 基于贝塞尔曲线创建动态软管。
 
-- AnchorPipe : 基于锚点曲线创建动态软管。
+- AnchorHose : 基于锚点曲线创建动态软管。
 
-- CirclePipe : 基于圆形曲线创建动态软管。
+- CircleHose : 基于圆形曲线创建动态软管。
 
-- EllipsePipe : 基于椭圆曲线创建动态软管。
+- EllipseHose : 基于椭圆曲线创建动态软管。
 
-- HelixPipe : 基于螺旋曲线创建动态软管。
+- HelixHose : 基于螺旋曲线创建动态软管。
 
-- SinPipe : 基于Sin曲线创建动态软管。
+- SinHose : 基于Sin曲线创建动态软管。
 
 - Machine : 机器电缆管案例。
 
 - HelpUI : 显示帮助信息。
 
 ## 案例
-- “MGS-FlexiblePipe/Scenes”目录下存有上述功能的演示案例，供读者参考。
+- “MGS-FlexibleHose/Scenes”目录下存有上述功能的演示案例，供读者参考。
 
 ## 预览
-- Bezier Pipe Editor
+- Bezier Hose Editor
 
-![Bezier Pipe Editor](./Attachments/README_Image/BezierPipeEditor.gif)
+![Bezier Hose Editor](./Attachments/README_Image/BezierHoseEditor.gif)
 
-- Anchor Pipe Editor
+- Anchor Hose Editor
 
-![Anchor Pipe Editor](./Attachments/README_Image/AnchorPipeEditor.gif)
+![Anchor Hose Editor](./Attachments/README_Image/AnchorHoseEditor.gif)
 
-- Circle Pipe
+- Circle Hose
 
-![Circle Pipe](./Attachments/README_Image/CirclePipe.gif)
+![Circle Hose](./Attachments/README_Image/CircleHose.gif)
 
-- Ellipse Pipe
+- Ellipse Hose
 
-![Ellipse Pipe](./Attachments/README_Image/EllipsePipe.gif)
+![Ellipse Hose](./Attachments/README_Image/EllipseHose.gif)
 
-- Sin Pipe
+- Sin Hose
 
-![Sin Pipe](./Attachments/README_Image/SinPipe.gif)
+![Sin Hose](./Attachments/README_Image/SinHose.gif)
 
-- Helix Pipe
+- Helix Hose
 
-![Helix Pipe](./Attachments/README_Image/HelixPipe.gif)
+![Helix Hose](./Attachments/README_Image/HelixHose.gif)
 
 - Machine Cable
 

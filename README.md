@@ -1,12 +1,12 @@
-﻿# MGS-FlexiblePipe
+﻿# MGS-FlexibleHose
 - [中文手册](./README_ZH.md)
 
 ## Summary
-- Unity plugin for create flexible pipe in scene.
+- Unity plugin for create flexible hose in scene.
 
 ## Demand
-- Create flexible pipe base on bezier curve.
-- Create flexible pipe base on anchor curve.
+- Create flexible hose base on bezier curve.
+- Create flexible hose base on anchor curve.
 
 ## Environment
 - Unity 5.0 or above.
@@ -25,53 +25,53 @@
 
 - Skin : Define Skin to render dynamic mesh.
 
-- CurvePipe : Define CurvePipe to render dynamic pipe mesh base on
+- CurveHose : Define CurveHose to render dynamic hose mesh base on
   center curve.
 
-- BezierPipe : Render dynamic pipe mesh base on cubic bezier curve.
+- BezierHose : Render dynamic hose mesh base on cubic bezier curve.
 
-- AnchorPipe : Render dynamic pipe mesh base on anchor vector animation
+- AnchorHose : Render dynamic hose mesh base on anchor vector animation
   curve.
 
-- CirclePipe : Render dynamic pipe mesh base on circle curve.
+- CircleHose : Render dynamic hose mesh base on circle curve.
 
-- EllipsePipe : Render dynamic pipe mesh base on ellipse curve.
+- EllipseHose : Render dynamic hose mesh base on ellipse curve.
 
-- HelixPipe : Render dynamic pipe mesh base on helix curve.
+- HelixHose : Render dynamic hose mesh base on helix curve.
 
-- SinPipe : Render dynamic pipe mesh base on sin curve.
+- SinHose : Render dynamic hose mesh base on sin curve.
 
 - Machine : Machine cable example.
 
 - HelpUI : Draw help info in scene.
 
 ## Demo
-- Demos in the path "MGS-FlexiblePipe/Scenes" provide reference to you.
+- Demos in the path "MGS-FlexibleHose/Scenes" provide reference to you.
 
 ## Preview
-- Bezier Pipe Editor
+- Bezier Hose Editor
 
-![Bezier Pipe Editor](./Attachments/README_Image/BezierPipeEditor.gif)
+![Bezier Hose Editor](./Attachments/README_Image/BezierHoseEditor.gif)
 
-- Anchor Pipe Editor
+- Anchor Hose Editor
 
-![Anchor Pipe Editor](./Attachments/README_Image/AnchorPipeEditor.gif)
+![Anchor Hose Editor](./Attachments/README_Image/AnchorHoseEditor.gif)
 
-- Circle Pipe
+- Circle Hose
 
-![Circle Pipe](./Attachments/README_Image/CirclePipe.gif)
+![Circle Hose](./Attachments/README_Image/CircleHose.gif)
 
-- Ellipse Pipe
+- Ellipse Hose
 
-![Ellipse Pipe](./Attachments/README_Image/EllipsePipe.gif)
+![Ellipse Hose](./Attachments/README_Image/EllipseHose.gif)
 
-- Sin Pipe
+- Sin Hose
 
-![Sin Pipe](./Attachments/README_Image/SinPipe.gif)
+![Sin Hose](./Attachments/README_Image/SinHose.gif)
 
-- Helix Pipe
+- Helix Hose
 
-![Helix Pipe](./Attachments/README_Image/HelixPipe.gif)
+![Helix Hose](./Attachments/README_Image/HelixHose.gif)
 
 - Machine Cable
 
