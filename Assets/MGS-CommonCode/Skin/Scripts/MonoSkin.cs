@@ -83,22 +83,9 @@ namespace Mogoson.Skin
         }
 
         /// <summary>
-        /// Create vertices of skin mesh.
+        /// Rebuild the mesh of skin.
         /// </summary>
-        /// <returns></returns>
-        protected abstract Vector3[] CreateVertices();
-
-        /// <summary>
-        /// Create triangles of skin mesh.
-        /// </summary>
-        /// <returns>Triangles of skin mesh.</returns>
-        protected abstract int[] CreateTriangles();
-
-        /// <summary>
-        /// Create uv of skin mesh.
-        /// </summary>
-        /// <returns>UV of skin mesh.</returns>
-        protected abstract Vector2[] CreateUV();
+        protected abstract void RebuildMesh();
         #endregion
 
         #region Public Method
@@ -113,14 +100,7 @@ namespace Mogoson.Skin
                 Initialize();
             }
 #endif
-            mesh.Clear();
-            mesh.vertices = CreateVertices();
-            mesh.triangles = CreateTriangles();
-            mesh.uv = CreateUV();
-
-            mesh.RecalculateNormals();
-            mesh.RecalculateBounds();
-
+            RebuildMesh();
             meshRenderer.sharedMesh = mesh;
             meshRenderer.localBounds = mesh.bounds;
 

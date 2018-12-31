@@ -13,6 +13,7 @@
 
 using Mogoson.Curve;
 using Mogoson.Skin;
+using Mogoson.UMesh;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -122,29 +123,56 @@ namespace Mogoson.CurveHose
 
         #region Protected Method
         /// <summary>
+        /// Rebuild the mesh of hose.
+        /// </summary>
+        protected override void RebuildMesh()
+        {
+            var isSeal = seal && polygon > 2;
+            mesh.Clear();
+            mesh.vertices = CreateVertices(isSeal);
+            mesh.triangles = CreateTriangles(isSeal);
+            mesh.uv = CreateUV(isSeal);
+            if (isSeal)
+            {
+                if (mesh.subMeshCount < 2)
+                {
+                    mesh.subMeshCount = 2;
+                }
+                mesh.SetTriangles(CreateSideTriangles(), 1);
+            }
+            mesh.RecalculateNormals();
+            mesh.RecalculateBounds();
+        }
+
+        /// <summary>
         /// Create the vertices of hose mesh.
         /// </summary>
+        /// <param name="isSeal">Is seal at both ends of hose?</param>
         /// <returns>Vertices array.</returns>
-        protected override Vector3[] CreateVertices()
+        protected Vector3[] CreateVertices(bool isSeal = false)
         {
             var vertices = new List<Vector3>();
             var keySegment = MaxKey / segmentCount;
-            for (int i = 0; i < segmentCount; i++)
+            for (int i = 0; i < segmentCount - 1; i++)
             {
                 var key = keySegment * i;
                 var center = Curve.GetPointAt(key);
                 var tangent = (Curve.GetPointAt(key + Delta) - center).normalized;
-                vertices.AddRange(CreateSegmentVertices(center, Quaternion.LookRotation(tangent)));
+                vertices.AddRange(MeshUtility.CreateVerticesBasePolygon(polygon, radius, center, Quaternion.LookRotation(tangent)));
             }
-
             var lastCenter = Curve.GetPointAt(MaxKey);
             var lastTangent = (lastCenter - Curve.GetPointAt(MaxKey - Delta)).normalized;
-            vertices.AddRange(CreateSegmentVertices(lastCenter, Quaternion.LookRotation(lastTangent)));
+            vertices.AddRange(MeshUtility.CreateVerticesBasePolygon(polygon, radius, lastCenter, Quaternion.LookRotation(lastTangent)));
 
-            if (seal && polygon > 2)
+            if (isSeal)
             {
+                var polygonVertices = polygon + 1;
                 vertices.Add(Curve.GetPointAt(0));
-                vertices.Add(Curve.GetPointAt(MaxKey));
+                vertices.AddRange(vertices.GetRange(0, polygonVertices));
+
+                var lastPolygonStart = polygonVertices * (segmentCount - 1);
+                vertices.Add(lastCenter);
+                vertices.AddRange(vertices.GetRange(lastPolygonStart, polygonVertices));
             }
             return vertices.ToArray();
         }
@@ -152,81 +180,46 @@ namespace Mogoson.CurveHose
         /// <summary>
         /// Create triangles of hose mesh.
         /// </summary>
+        /// <param name="isSeal">Is seal at both ends of hose?</param>
         /// <returns>Triangles array.</returns>
-        protected override int[] CreateTriangles()
+        protected int[] CreateTriangles(bool isSeal = false)
         {
-            var triangles = new List<int>();
-            for (int i = 0; i < segmentCount; i++)
-            {
-                for (int j = 0; j < polygon - 1; j++)
-                {
-                    triangles.Add(polygon * i + j);
-                    triangles.Add(polygon * i + j + 1);
-                    triangles.Add(polygon * (i + 1) + j + 1);
+            var triangles = MeshUtility.CreateTrianglesBasePrism(polygon, segmentCount, 0);
+            return triangles.ToArray();
+        }
 
-                    triangles.Add(polygon * i + j);
-                    triangles.Add(polygon * (i + 1) + j + 1);
-                    triangles.Add(polygon * (i + 1) + j);
-                }
+        /// <summary>
+        /// Create triangles of hose side mesh.
+        /// </summary>
+        /// <returns></returns>
+        protected int[] CreateSideTriangles()
+        {
+            var polygonVertices = polygon + 1;
+            var leftCenter = polygonVertices * segmentCount;
+            var triangles = MeshUtility.CreateTrianglesBasePolygon(polygon, leftCenter, leftCenter + 1, false);
 
-                triangles.Add(polygon * i);
-                triangles.Add(polygon * (i + 1));
-                triangles.Add(polygon * (i + 2) - 1);
-
-                triangles.Add(polygon * i);
-                triangles.Add(polygon * (i + 2) - 1);
-                triangles.Add(polygon * (i + 1) - 1);
-            }
-
-            if (seal && polygon > 2)
-            {
-                for (int i = 0; i < polygon - 1; i++)
-                {
-                    triangles.Add(polygon * (segmentCount + 1));
-                    triangles.Add(i + 1);
-                    triangles.Add(i);
-
-                    triangles.Add(polygon * (segmentCount + 1) + 1);
-                    triangles.Add(polygon * segmentCount + i);
-                    triangles.Add(polygon * segmentCount + i + 1);
-                }
-
-                triangles.Add(polygon * (segmentCount + 1));
-                triangles.Add(0);
-                triangles.Add(polygon - 1);
-
-                triangles.Add(polygon * (segmentCount + 1) + 1);
-                triangles.Add(polygon * (segmentCount + 1) - 1);
-                triangles.Add(polygon * segmentCount);
-            }
+            var rightCenter = leftCenter + polygonVertices + 1;
+            triangles.AddRange(MeshUtility.CreateTrianglesBasePolygon(polygon, rightCenter, rightCenter + 1));
             return triangles.ToArray();
         }
 
         /// <summary>
         /// Create uv of hose mesh.
         /// </summary>
+        /// <param name="isSeal">Is seal at both ends of hose?</param>
         /// <returns>UV array.</returns>
-        protected override Vector2[] CreateUV()
+        protected Vector2[] CreateUV(bool isSeal = false)
         {
-            return null;
-        }
-
-        /// <summary>
-        /// Create vertices of current segment base hose.
-        /// </summary>
-        /// <param name="center">Center point of segment.</param>
-        /// <param name="rotation">Rotation of segment vertices.</param>
-        /// <returns>Segment vertices.</returns>
-        protected virtual Vector3[] CreateSegmentVertices(Vector3 center, Quaternion rotation)
-        {
-            var vertices = new Vector3[polygon];
-            for (int i = 0; i < polygon; i++)
+            var uv = MeshUtility.CreateUVBasePrism(polygon, segmentCount);
+            if (isSeal)
             {
-                var angle = CircleRadian / polygon * i;
-                var vertice = center + rotation * new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
-                vertices[i] = vertice;
+                for (int i = 0; i < 2; i++)
+                {
+                    uv.Add(Vector2.one * 0.5f);
+                    uv.AddRange(MeshUtility.CreateUVBasePolygon(polygon));
+                }
             }
-            return vertices;
+            return uv.ToArray();
         }
         #endregion
 
@@ -237,7 +230,7 @@ namespace Mogoson.CurveHose
         public override void Rebuild()
         {
             length = Curve.Length;
-            segmentCount = (int)(length / segment);
+            segmentCount = (int)(length / segment) + 1;
             base.Rebuild();
         }
 
