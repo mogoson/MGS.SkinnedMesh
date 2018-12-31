@@ -203,6 +203,15 @@ namespace Mogoson.CurveHose
         }
 
         /// <summary>
+        /// Create uv of hose mesh.
+        /// </summary>
+        /// <returns>UV array.</returns>
+        protected override Vector2[] CreateUV()
+        {
+            return null;
+        }
+
+        /// <summary>
         /// Create vertices of current segment base hose.
         /// </summary>
         /// <param name="center">Center point of segment.</param>

@@ -10,8 +10,6 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using System;
-
 namespace Mogoson.IO
 {
     /// <summary>
@@ -39,11 +37,5 @@ namespace Mogoson.IO
         /// <param name="format">A composite format string.</param>
         /// <param name="args">Format arguments.</param>
         void LogWarning(string format, params object[] args);
-
-        /// <summary>
-        /// Logs a formatted exception message.
-        /// </summary>
-        /// <param name="exception">Runtime exception.</param>
-        void LogException(Exception exception);
     }
 }

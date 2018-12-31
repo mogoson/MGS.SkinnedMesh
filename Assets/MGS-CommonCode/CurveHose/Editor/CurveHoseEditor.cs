@@ -26,6 +26,11 @@ namespace Mogoson.CurveHose
         #region Protected Method
         protected virtual void OnSceneGUI()
         {
+            DrawHoseCenterCurve();
+        }
+
+        protected virtual void DrawHoseCenterCurve()
+        {
             Handles.color = Blue;
             for (float t = 0; t < Target.MaxKey; t += Delta)
             {

@@ -26,16 +26,26 @@ namespace Mogoson.CurveHose
         #region Protected Method
         protected override void OnSceneGUI()
         {
+            base.OnSceneGUI();
+            if (Application.isPlaying)
+            {
+                return;
+            }
+            DrawAnchorCurveEditor();
+        }
+
+        protected override void DrawHoseCenterCurve()
+        {
             Handles.color = Blue;
             var scaleDelta = Mathf.Max(Delta, Delta * GetHandleSize(Target.transform.position));
             for (float t = 0; t < Target.MaxKey; t += scaleDelta)
             {
                 Handles.DrawLine(Target.GetPointAt(t), Target.GetPointAt(Mathf.Min(Target.MaxKey, t + scaleDelta)));
             }
+        }
 
-            if (Application.isPlaying)
-                return;
-
+        protected void DrawAnchorCurveEditor()
+        {
             for (int i = 0; i < Target.AnchorsCount; i++)
             {
                 var anchorItem = Target.GetAnchorAt(i);
@@ -46,10 +56,13 @@ namespace Mogoson.CurveHose
                     {
                         var offset = Vector3.zero;
                         if (i > 0)
+                        {
                             offset = (anchorItem - Target.GetAnchorAt(i - 1)).normalized * GetHandleSize(anchorItem);
+                        }
                         else
+                        {
                             offset = Vector3.forward * GetHandleSize(anchorItem);
-
+                        }
                         Target.InsertAnchor(i + 1, anchorItem + offset);
                         Target.Rebuild();
                     });

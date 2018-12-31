@@ -27,10 +27,15 @@ namespace Mogoson.CurveHose
         protected override void OnSceneGUI()
         {
             base.OnSceneGUI();
-
             if (Application.isPlaying)
+            {
                 return;
+            }
+            DrawBezierCurveEditor();
+        }
 
+        protected void DrawBezierCurveEditor()
+        {
             DrawFreeMoveHandle(Target.StartPoint, Quaternion.identity, NodeSize, MoveSnap, SphereCap, position =>
             {
                 Target.StartPoint = position;

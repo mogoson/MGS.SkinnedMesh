@@ -103,10 +103,11 @@ namespace Mogoson.Curve
         {
             get
             {
-                if (KeyframeCount > 0)
-                    return xCurve[KeyframeCount - 1].time;
-                else
+                if (KeyframeCount == 0)
+                {
                     return 0;
+                }
+                return xCurve[KeyframeCount - 1].time;
             }
         }
 
@@ -229,7 +230,9 @@ namespace Mogoson.Curve
 
             //No anchor.
             if (anchors == null || anchors.Length == 0)
+            {
                 LogUtility.LogWarning("Created a curve with no key frame: The anchors is null or empty.");
+            }
             else
             {
                 //Add frame keys to curve.

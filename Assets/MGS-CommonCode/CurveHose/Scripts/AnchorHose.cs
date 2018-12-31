@@ -33,8 +33,13 @@ namespace Mogoson.CurveHose
         /// </summary>
         [SerializeField]
         [HideInInspector]
-        protected List<Vector3> anchors = new List<Vector3>() { Vector3.one,
-            new Vector3(1, 1, 2), new Vector3(3, 1, 2), new Vector3(3, 1, 3)};
+        protected List<Vector3> anchors = new List<Vector3>()
+        {
+            new Vector3(1, 1, 1),
+            new Vector3(1, 1, 2),
+            new Vector3(3, 1, 2),
+            new Vector3(3, 1, 3)
+        };
 
         /// <summary>
         /// Count of hose curve anchors.

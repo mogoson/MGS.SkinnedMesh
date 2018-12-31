@@ -39,7 +39,7 @@ namespace Mogoson.IO
             LogUtility.Logger = UnityDebugger.Instance;
 #else
             FileLogger.Instance.FilePath = FilePath;
-            LogUtility.handler = FileLogger.Instance;
+            LogUtility.Logger = FileLogger.Instance;
 #endif
         }
         #endregion

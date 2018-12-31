@@ -10,8 +10,6 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using System;
-
 namespace Mogoson.IO
 {
     /// <summary>
@@ -35,7 +33,9 @@ namespace Mogoson.IO
         public static void Log(string format, params object[] args)
         {
             if (Logger != null)
+            {
                 Logger.Log(format, args);
+            }
         }
 
         /// <summary>
@@ -46,7 +46,9 @@ namespace Mogoson.IO
         public static void LogError(string format, params object[] args)
         {
             if (Logger != null)
+            {
                 Logger.LogError(format, args);
+            }
         }
 
         /// <summary>
@@ -57,17 +59,9 @@ namespace Mogoson.IO
         public static void LogWarning(string format, params object[] args)
         {
             if (Logger != null)
+            {
                 Logger.LogWarning(format, args);
-        }
-
-        /// <summary>
-        /// Logs a formatted exception message.
-        /// </summary>
-        /// <param name="exception">Runtime exception.</param>
-        public static void LogException(Exception exception)
-        {
-            if (Logger != null)
-                Logger.LogException(exception);
+            }
         }
         #endregion
     }

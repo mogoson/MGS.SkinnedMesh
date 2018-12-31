@@ -88,15 +88,6 @@ namespace Mogoson.IO
         {
             LogToFile("Warning", format, args);
         }
-
-        /// <summary>
-        /// Logs a formatted exception message.
-        /// </summary>
-        /// <param name="exception">Runtime exception.</param>
-        public void LogException(Exception exception)
-        {
-            LogToFile("Exception", "{0}\nStackTrace: {1}", exception.Message, exception.StackTrace);
-        }
         #endregion
     }
 }
