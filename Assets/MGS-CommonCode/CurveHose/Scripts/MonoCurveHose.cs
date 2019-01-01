@@ -152,7 +152,7 @@ namespace Mogoson.CurveHose
         protected Vector3[] CreateVertices(bool isSeal = false)
         {
             var vertices = new List<Vector3>();
-            var keySegment = MaxKey / segmentCount;
+            var keySegment = MaxKey / (segmentCount - 1);
             for (int i = 0; i < segmentCount - 1; i++)
             {
                 var key = keySegment * i;
