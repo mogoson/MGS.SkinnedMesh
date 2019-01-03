@@ -1,7 +1,7 @@
 ﻿==========================================================================
   Copyright © 2018 Mogoson. All rights reserved.
   Name: MGS-FlexibleHose
-  Author: Mogoson   Version: 0.1.3   Date: 1/1/2019
+  Author: Mogoson   Version: 0.2.0   Date: 1/1/2019
 ==========================================================================
   [Summary]
     Unity plugin for create flexible hose in scene.
