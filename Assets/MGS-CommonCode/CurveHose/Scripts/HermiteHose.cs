@@ -1,8 +1,8 @@
 ﻿/*************************************************************************
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  AnchorHose.cs
- *  Description  :  Render dynamic hose mesh base on anchor curve.
+ *  File         :  HermiteHose.cs
+ *  Description  :  Render dynamic hose mesh base on hermite curve.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -17,10 +17,10 @@ using UnityEngine;
 namespace Mogoson.CurveHose
 {
     /// <summary>
-    /// Render dynamic hose mesh base on anchor curve.
+    /// Render dynamic hose mesh base on hermite curve.
     /// </summary>
-    [AddComponentMenu("Mogoson/CurveHose/AnchorHose")]
-    public class AnchorHose : MonoCurveHose
+    [AddComponentMenu("Mogoson/CurveHose/HermiteHose")]
+    public class HermiteHose : MonoCurveHose
     {
         #region Field and Property
         /// <summary>

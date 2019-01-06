@@ -28,7 +28,7 @@
 
     BezierHose : Render dynamic hose mesh base on cubic bezier curve.
 
-    AnchorHose : Render dynamic hose mesh base on anchor vector animation
+    HermiteHose : Render dynamic hose mesh base on anchor vector animation
     curve.
 
     CircleHose : Render dynamic hose mesh base on circle curve.
@@ -45,12 +45,12 @@
 --------------------------------------------------------------------------
   [Usage]
     Create an empty gameobject and attach the hose component BezierHose
-    or AnchorHose to it.
+    or HermiteHose to it.
 
     If BezierHose attached, drag the green sphere to change tangent and
     drag the blue sphere to change it's position.
 
-    if AnchorHose attached, drag the blue sphere to change it's position,
+    if HermiteHose attached, drag the blue sphere to change it's position,
     press the ALT key and click the green sphere to add anchor, press the
     SHIFT key and click the red sphere to remove anchor if you want.
 --------------------------------------------------------------------------

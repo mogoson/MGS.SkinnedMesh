@@ -1,8 +1,8 @@
 /*************************************************************************
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  AnchorHoseEditor.cs
- *  Description  :  Editor for AnchorHose component.
+ *  File         :  HermiteHoseEditor.cs
+ *  Description  :  Editor for HermiteHose component.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -15,12 +15,12 @@ using UnityEngine;
 
 namespace Mogoson.CurveHose
 {
-    [CustomEditor(typeof(AnchorHose), true)]
+    [CustomEditor(typeof(HermiteHose), true)]
     [CanEditMultipleObjects]
-    public class AnchorHoseEditor : CurveHoseEditor
+    public class HermiteHoseEditor : CurveHoseEditor
     {
         #region Field and Property
-        protected new AnchorHose Target { get { return target as AnchorHose; } }
+        protected new HermiteHose Target { get { return target as HermiteHose; } }
         #endregion
 
         #region Protected Method
@@ -31,7 +31,7 @@ namespace Mogoson.CurveHose
             {
                 return;
             }
-            DrawAnchorCurveEditor();
+            DrawHermiteCurveEditor();
         }
 
         protected override void DrawHoseCenterCurve()
@@ -44,7 +44,7 @@ namespace Mogoson.CurveHose
             }
         }
 
-        protected void DrawAnchorCurveEditor()
+        protected void DrawHermiteCurveEditor()
         {
             for (int i = 0; i < Target.AnchorsCount; i++)
             {

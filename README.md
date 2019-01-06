@@ -30,7 +30,7 @@
 
 - BezierHose : Render dynamic hose mesh base on cubic bezier curve.
 
-- AnchorHose : Render dynamic hose mesh base on anchor vector animation
+- HermiteHose : Render dynamic hose mesh base on anchor vector animation
   curve.
 
 - CircleHose : Render dynamic hose mesh base on circle curve.
@@ -53,9 +53,9 @@
 
 ![Bezier Hose Editor](./Attachments/README_Image/BezierHoseEditor.gif)
 
-- Anchor Hose Editor
+- Hermite Hose Editor
 
-![Anchor Hose Editor](./Attachments/README_Image/AnchorHoseEditor.gif)
+![Hermite Hose Editor](./Attachments/README_Image/HermiteHoseEditor.gif)
 
 - Circle Hose
 

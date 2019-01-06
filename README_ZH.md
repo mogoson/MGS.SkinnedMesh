@@ -29,7 +29,7 @@
 
 - BezierHose : 基于贝塞尔曲线创建动态软管。
 
-- AnchorHose : 基于锚点曲线创建动态软管。
+- HermiteHose : 基于锚点曲线创建动态软管。
 
 - CircleHose : 基于圆形曲线创建动态软管。
 
@@ -51,9 +51,9 @@
 
 ![Bezier Hose Editor](./Attachments/README_Image/BezierHoseEditor.gif)
 
-- Anchor Hose Editor
+- Hermite Hose Editor
 
-![Anchor Hose Editor](./Attachments/README_Image/AnchorHoseEditor.gif)
+![Hermite Hose Editor](./Attachments/README_Image/HermiteHoseEditor.gif)
 
 - Circle Hose
 
