@@ -1,4 +1,4 @@
-﻿# MGS-FlexibleHose
+﻿# MGS-CurveHose
 - [中文手册](./README_ZH.md)
 
 ## Summary
@@ -10,7 +10,7 @@
 
 ## Environment
 - Unity 5.0 or above.
-- .Net Framework 3.0 or above.
+- .Net Framework 3.5 or above.
 
 ## Achieve
 - BezierCurve : Define bezier curve.
@@ -22,8 +22,6 @@
 - HelixCurve : Helix curve.
 
 - SinCurve : Sin curve.
-
-- Skin : Define Skin to render dynamic mesh.
 
 - CurveHose : Define CurveHose to render dynamic hose mesh base on
   center curve.
@@ -41,41 +39,37 @@
 
 - SinHose : Render dynamic hose mesh base on sin curve.
 
-- Machine : Machine cable example.
-
-- HelpUI : Draw help info in scene.
-
 ## Demo
-- Demos in the path "MGS-FlexibleHose/Scenes" provide reference to you.
+- Demos in the path "MGS-CurveHose/Scenes" provide reference to you.
 
 ## Preview
 - Bezier Hose Editor
 
-![Bezier Hose Editor](./Attachments/README_Image/BezierHoseEditor.gif)
+![Bezier Hose Editor](./Attachment/README_Image/BezierHoseEditor.gif)
 
 - Hermite Hose Editor
 
-![Hermite Hose Editor](./Attachments/README_Image/HermiteHoseEditor.gif)
+![Hermite Hose Editor](./Attachment/README_Image/HermiteHoseEditor.gif)
 
 - Circle Hose
 
-![Circle Hose](./Attachments/README_Image/CircleHose.gif)
+![Circle Hose](./Attachment/README_Image/CircleHose.gif)
 
 - Ellipse Hose
 
-![Ellipse Hose](./Attachments/README_Image/EllipseHose.gif)
+![Ellipse Hose](./Attachment/README_Image/EllipseHose.gif)
 
 - Sin Hose
 
-![Sin Hose](./Attachments/README_Image/SinHose.gif)
+![Sin Hose](./Attachment/README_Image/SinHose.gif)
 
 - Helix Hose
 
-![Helix Hose](./Attachments/README_Image/HelixHose.gif)
+![Helix Hose](./Attachment/README_Image/HelixHose.gif)
 
 - Machine Cable
 
-![Machine Cable](./Attachments/README_Image/MachineCable.gif)
+![Machine Cable](./Attachment/README_Image/MachineCable.gif)
 
 ## Contact
 - If you have any questions, feel free to contact me at mogoson@outlook.com.
