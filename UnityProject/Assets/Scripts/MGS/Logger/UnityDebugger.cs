@@ -11,7 +11,6 @@
  *************************************************************************/
 
 using MGS.Common.DesignPattern;
-using MGS.Common.Logger;
 using UnityEngine;
 
 namespace MGS.Logger
@@ -19,7 +18,7 @@ namespace MGS.Logger
     /// <summary>
     /// Debugger for unity editor.
     /// </summary>
-    public sealed class UnityDebugger : Singleton<UnityDebugger>, ILogger
+    public sealed class UnityDebugger : Singleton<UnityDebugger>, Common.Logger.ILogger
     {
         #region Private Method
         /// <summary>

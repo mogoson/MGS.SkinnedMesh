@@ -230,16 +230,83 @@
             Single instance of the specified type T.
             </summary>
         </member>
+        <member name="T:MGS.Common.Generic.GenericEvent">
+            <summary>
+            Generic event.
+            </summary>
+        </member>
+        <member name="F:MGS.Common.Generic.GenericEvent.callback">
+            <summary>
+            Event callback.
+            </summary>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent.AddListener(System.Action)">
+            <summary>
+            Add event listener.
+            </summary>
+            <param name="callback">Event callback.</param>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent.RemoveListener(System.Action)">
+            <summary>
+            Remove event listener.
+            </summary>
+            <param name="callback">Event callback.</param>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent.ClearListener">
+            <summary>
+            Clear event listener.
+            </summary>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent.Invoke">
+            <summary>
+            Invoke event.
+            </summary>
+        </member>
+        <member name="T:MGS.Common.Generic.GenericEvent`1">
+            <summary>
+            Generic event.
+            </summary>
+            <typeparam name="T">Specified type of event data.</typeparam>
+        </member>
+        <member name="F:MGS.Common.Generic.GenericEvent`1.callback">
+            <summary>
+            Event callback.
+            </summary>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent`1.AddListener(System.Action{`0})">
+            <summary>
+            Add event listener.
+            </summary>
+            <param name="callback">Event callback.</param>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent`1.RemoveListener(System.Action{`0})">
+            <summary>
+            Remove event listener.
+            </summary>
+            <param name="callback">Event callback.</param>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent`1.ClearListener">
+            <summary>
+            Clear event listener.
+            </summary>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent`1.Invoke(`0)">
+            <summary>
+            Invoke event.
+            </summary>
+            <param name="data">Data of event.</param>
+        </member>
         <member name="T:MGS.Common.IO.DirectoryUtility">
             <summary>
             Utility for directory.
             </summary>
         </member>
-        <member name="M:MGS.Common.IO.DirectoryUtility.RequirePath(System.String)">
+        <member name="M:MGS.Common.IO.DirectoryUtility.RequirePath(System.String,System.String@)">
             <summary>
             Require the directory path exist.
             </summary>
             <param name="path">Directory path.</param>
+            <param name="error">Error message.</param>
             <returns>Create directory path succeed?</returns>
         </member>
         <member name="T:MGS.Common.IO.FileUtility">
@@ -264,11 +331,12 @@
             <param name="pageIndex">Index of page.</param>
             <returns>Index page bytes.</returns>
         </member>
-        <member name="M:MGS.Common.IO.FileUtility.ReadAllLines(System.String)">
+        <member name="M:MGS.Common.IO.FileUtility.ReadAllLines(System.String,System.Text.Encoding)">
             <summary>
             Read all lines of file.
             </summary>
             <param name="filePath">Path of target file.</param>
+            <param name="encoding">Encoding of target file.</param>
             <returns>All lines from file.</returns>
         </member>
         <member name="T:MGS.Common.Logger.FileLogger">
@@ -924,27 +992,55 @@
             <param name="source">Data source.</param>
             <returns>Smooth result.</returns>
         </member>
-        <member name="T:MGS.Common.Structure.Range">
+        <member name="T:MGS.Common.Utility.MultilingualUtility">
             <summary>
-            Range form min to max.
+            Utility for multilingualism.
             </summary>
         </member>
-        <member name="F:MGS.Common.Structure.Range.min">
+        <member name="F:MGS.Common.Utility.MultilingualUtility.SEPARATOR">
             <summary>
-            Min value of range.
+            Separator of paragraph key and value.
             </summary>
         </member>
-        <member name="F:MGS.Common.Structure.Range.max">
+        <member name="P:MGS.Common.Utility.MultilingualUtility.Current">
             <summary>
-            Max value of range.
+            Current language.
             </summary>
         </member>
-        <member name="M:MGS.Common.Structure.Range.#ctor(System.Single,System.Single)">
+        <member name="F:MGS.Common.Utility.MultilingualUtility.languages">
+            <summary>
+            Languages content list.
+            </summary>
+        </member>
+        <member name="F:MGS.Common.Utility.MultilingualUtility.directory">
+            <summary>
+            The directory of multilingualism files.
+            </summary>
+        </member>
+        <member name="M:MGS.Common.Utility.MultilingualUtility.#ctor">
             <summary>
             Constructor.
             </summary>
-            <param name="min">Min value of range.</param>
-            <param name="max">Max value of range.</param>
+        </member>
+        <member name="M:MGS.Common.Utility.MultilingualUtility.Initialize(System.String)">
+            <summary>
+            Initialize the directory of multilingualism files.
+            </summary>
+            <param name="directory">The directory of multilingualism files.</param>
+        </member>
+        <member name="M:MGS.Common.Utility.MultilingualUtility.SetLanguage(System.String)">
+            <summary>
+            Set language by name.
+            </summary>
+            <param name="name">Name of language (Config in the LanguageSettings).</param>
+            <returns>Set language succeed?</returns>
+        </member>
+        <member name="M:MGS.Common.Utility.MultilingualUtility.GetParagraph(System.String)">
+            <summary>
+            Get a paragraph text of key in language.
+            </summary>
+            <param name="key">Key of paragraph text.</param>
+            <returns>A paragraph text of key in language.</returns>
         </member>
     </members>
 </doc>

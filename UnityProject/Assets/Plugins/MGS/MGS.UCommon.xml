@@ -34,9 +34,14 @@
             Animation is playing?
             </summary>
         </member>
-        <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Play">
+        <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Awake">
             <summary>
-            Play animation.
+            Awake animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Initialize">
+            <summary>
+            Initialize animation.
             </summary>
         </member>
         <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Play(System.Object)">
@@ -50,6 +55,7 @@
             Refresh animation.
             </summary>
             <param name="data">Animation data.</param>
+            <returns>Succeed?</returns>
         </member>
         <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Pause">
             <summary>
@@ -87,11 +93,6 @@
             Animation is playing?
             </summary>
         </member>
-        <member name="M:MGS.UCommon.UAnimation.IAnimation.Play">
-            <summary>
-            Play animation.
-            </summary>
-        </member>
         <member name="M:MGS.UCommon.UAnimation.IAnimation.Play(System.Object)">
             <summary>
             Play animation.
@@ -103,6 +104,7 @@
             Refresh animation.
             </summary>
             <param name="data">Animation data.</param>
+            <returns>Succeed?</returns>
         </member>
         <member name="M:MGS.UCommon.UAnimation.IAnimation.Pause">
             <summary>
@@ -138,6 +140,398 @@
         <member name="F:MGS.UCommon.UAnimation.LoopMode.PingPong">
             <summary>
             Animation play like ping pong.
+            </summary>
+        </member>
+        <member name="T:MGS.UCommon.Generic.ColorBlendMode">
+            <summary>
+            Mode of color blend.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Normal">
+            <summary>
+            Normal-Normal Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Dissolve">
+            <summary>
+            Normal-Dissolve Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Darken">
+            <summary>
+            Darken-Darken Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Multiply">
+            <summary>
+            Darken-Multiply Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.ColorBurn">
+            <summary>
+            Darken-ColorBurn Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.LinearBurn">
+            <summary>
+            Darken-LinearBurn Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.DarkerColor">
+            <summary>
+            Darken-DarkerColor Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Lighten">
+            <summary>
+            Lighten-Lighten Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Screen">
+            <summary>
+            Lighten-Screen Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.ColorDodge">
+            <summary>
+            Lighten-ColorDodge Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.LinearDodge">
+            <summary>
+            Lighten-LinearDodge Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.LighterColor">
+            <summary>
+            Lighten-LighterColor Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Overlay">
+            <summary>
+            Contrast-Overlay Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.SoftLight">
+            <summary>
+            Contrast-SoftLight Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.HardLight">
+            <summary>
+            Contrast-HardLight Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.VividLight">
+            <summary>
+            Contrast-VividLight Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.LinearLight">
+            <summary>
+            Contrast-LinearLight Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.PinLight">
+            <summary>
+            Contrast-PinLight Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.HardMix">
+            <summary>
+            Contrast-HardMix Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Difference">
+            <summary>
+            Cancelation-Difference Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Exclusion">
+            <summary>
+            Cancelation-Exclusion Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Subtract">
+            <summary>
+            Cancelation-Subtract Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Divide">
+            <summary>
+            Cancelation-Divide Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Hue">
+            <summary>
+            Component-Hue Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Color">
+            <summary>
+            Component-Color Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Saturation">
+            <summary>
+            Component-Saturation Mode.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.ColorBlendMode.Luminosity">
+            <summary>
+            Component-Luminosity Mode.
+            </summary>
+        </member>
+        <member name="T:MGS.UCommon.Generic.MirrorMode">
+            <summary>
+            Mode of mirror.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.MirrorMode.Horizontal">
+            <summary>
+            Horizontal mirror.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.MirrorMode.Vertical">
+            <summary>
+            Vertical mirror.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.MirrorMode.Both">
+            <summary>
+            Both horizontal and vertical mirror.
+            </summary>
+        </member>
+        <member name="T:MGS.UCommon.Generic.Range">
+            <summary>
+            Range form min to max.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.Range.min">
+            <summary>
+            Min value of range.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.Range.max">
+            <summary>
+            Max value of range.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Generic.Range.Length">
+            <summary>
+            Length of range from min to max.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.Generic.Range.#ctor(System.Single,System.Single)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="min">Min value of range.</param>
+            <param name="max">Max value of range.</param>
+        </member>
+        <member name="T:MGS.UCommon.Generic.PlaneArea">
+            <summary>
+            Rectangle area on plane.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.PlaneArea.center">
+            <summary>
+            Center of area.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.PlaneArea.width">
+            <summary>
+            Width of area.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.Generic.PlaneArea.length">
+            <summary>
+            Length of area.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.Generic.PlaneArea.#ctor(UnityEngine.Transform,System.Single,System.Single)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="center">Center of area.</param>
+            <param name="width">Width of area.</param>
+            <param name="length">Length of area.</param>
+        </member>
+        <member name="T:MGS.UCommon.UI.InteractableUI">
+            <summary>
+            Base class for interactable UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.InteractableUI.Interactable">
+            <summary>
+            UI is interactable?
+            </summary>
+        </member>
+        <member name="T:MGS.UCommon.UI.MonoUI">
+            <summary>
+            Base class for mono UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.MonoUI.rectTransform">
+            <summary>
+            RectTransform component of UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.MonoUI.IsOpen">
+            <summary>
+            UI is open?
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.MonoUI.IsDisposed">
+            <summary>
+            UI is disposed?
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.MonoUI.OnOpen">
+            <summary>
+            Event on open UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.MonoUI.OnClose">
+            <summary>
+            Event on close UI.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.UI.MonoUI.Awake">
+            <summary>
+            Awake UI.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.UI.MonoUI.Initialize">
+            <summary>
+            Initialize UI.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.UI.MonoUI.OnDestroy">
+            <summary>
+            On destroy UI.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.UI.MonoUI.Open(System.Object)">
+            <summary>
+            Open UI.
+            </summary>
+            <param name="data">Data for UI.</param>
+        </member>
+        <member name="M:MGS.UCommon.UI.MonoUI.Refresh(System.Object)">
+            <summary>
+            Refresh UI.
+            </summary>
+            <param name="data">Data for UI.</param>
+            <returns>Succeed?</returns>
+        </member>
+        <member name="M:MGS.UCommon.UI.MonoUI.Close(System.Boolean)">
+            <summary>
+            Close UI.
+            </summary>
+            <param name="dispose">Dispose UI on close?</param>
+        </member>
+        <member name="T:MGS.UCommon.UI.UIElement">
+            <summary>
+            Base class for UI element.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.UI.UIElement.Mirror(MGS.UCommon.Generic.MirrorMode)">
+            <summary>
+            Mirror UI.
+            </summary>
+            <param name="mode">Mode of mirror.</param>
+        </member>
+        <member name="M:MGS.UCommon.UI.UIElement.Language(System.String)">
+            <summary>
+            Set language of UI.
+            </summary>
+            <param name="name">Language name.</param>
+        </member>
+        <member name="T:MGS.UCommon.UI.IInteractableUI">
+            <summary>
+            Interface for interactable UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.IInteractableUI.Interactable">
+            <summary>
+            UI is interactable?
+            </summary>
+        </member>
+        <member name="T:MGS.UCommon.UI.IMonoUI">
+            <summary>
+            Interface for mono UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.IMonoUI.rectTransform">
+            <summary>
+            RectTransform component of UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.IMonoUI.IsOpen">
+            <summary>
+            UI is open?
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.IMonoUI.IsDisposed">
+            <summary>
+            UI is disposed?
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.IMonoUI.OnOpen">
+            <summary>
+            Event on open UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.IMonoUI.OnClose">
+            <summary>
+            Event on close UI.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.UI.IMonoUI.Open(System.Object)">
+            <summary>
+            Open UI.
+            </summary>
+            <param name="data">Data for UI.</param>
+        </member>
+        <member name="M:MGS.UCommon.UI.IMonoUI.Refresh(System.Object)">
+            <summary>
+            Refresh UI.
+            </summary>
+            <param name="data">Data for UI.</param>
+            <returns>Succeed?</returns>
+        </member>
+        <member name="M:MGS.UCommon.UI.IMonoUI.Close(System.Boolean)">
+            <summary>
+            Close UI.
+            </summary>
+            <param name="dispose">Dispose UI on close?</param>
+        </member>
+        <member name="T:MGS.UCommon.UI.IMirrorableUI">
+            <summary>
+            Interface for mirrorable UI.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.UI.IMirrorableUI.Mirror(MGS.UCommon.Generic.MirrorMode)">
+            <summary>
+            Mirror UI.
+            </summary>
+            <param name="mode">Mode of mirror.</param>
+        </member>
+        <member name="T:MGS.UCommon.UI.IMultilingualUI">
+            <summary>
+            Interface for multilingual UI.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.UI.IMultilingualUI.Language(System.String)">
+            <summary>
+            Set language of UI.
+            </summary>
+            <param name="name">Language name.</param>
+        </member>
+        <member name="T:MGS.UCommon.UI.IUIElement">
+            <summary>
+            Interface for UI element.
             </summary>
         </member>
         <member name="T:MGS.UCommon.Extension.GameObjectExtention">
@@ -822,16 +1216,16 @@
             MonoBehaviour with a single instance.
             </summary>
         </member>
+        <member name="M:MGS.UCommon.DesignPattern.SingleBehaviour.SingleAwake">
+            <summary>
+            SingleBehaviour awake.
+            </summary>
+        </member>
         <member name="T:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1">
             <summary>
             MonoBehaviour with a single instance.
             </summary>
             <typeparam name="T">Specified type.</typeparam>
-        </member>
-        <member name="F:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1.SyncRoot">
-            <summary>
-            Sync root of single behaviour.
-            </summary>
         </member>
         <member name="P:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1.Instance">
             <summary>
@@ -866,11 +1260,6 @@
         <member name="P:MGS.UCommon.Skin.ISkin.Collider">
             <summary>
             Mesh collider of skin.
-            </summary>
-        </member>
-        <member name="M:MGS.UCommon.Skin.ISkin.Initialize">
-            <summary>
-            Initialize the skin.
             </summary>
         </member>
         <member name="M:MGS.UCommon.Skin.ISkin.Rebuild">
@@ -928,16 +1317,16 @@
             Awake component.
             </summary>
         </member>
+        <member name="M:MGS.UCommon.Skin.MonoSkin.Initialize">
+            <summary>
+            Initialize mono skin.
+            </summary>
+        </member>
         <member name="M:MGS.UCommon.Skin.MonoSkin.RebuildMesh(UnityEngine.Mesh)">
             <summary>
             Rebuild the mesh of skin.
             </summary>
             <param name="mesh">Mesh of skin.</param>
-        </member>
-        <member name="M:MGS.UCommon.Skin.MonoSkin.Initialize">
-            <summary>
-            Initialize mono skin.
-            </summary>
         </member>
         <member name="M:MGS.UCommon.Skin.MonoSkin.Rebuild">
             <summary>
@@ -954,33 +1343,247 @@
             Remove MeshCollider from skin.
             </summary>
         </member>
-        <member name="T:MGS.UCommon.Structure.PlaneArea">
+        <member name="T:MGS.UCommon.Utility.ColorBlendUtility">
             <summary>
-            Rectangle area on plane.
+            Utility for color blend.
             </summary>
         </member>
-        <member name="F:MGS.UCommon.Structure.PlaneArea.center">
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.Blend(UnityEngine.Color,UnityEngine.Color,MGS.UCommon.Generic.ColorBlendMode)">
             <summary>
-            Center of area.
+            Blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <param name="mode">Mode of color blend.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.NormalBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Normal mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.DissolveBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Dissolve mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.DarkenBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Darken mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.MultiplyBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Multiply mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.ColorBurnBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            ColorBurn mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.LinearBurnBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            LinearBurn vblend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.DarkerColorBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            DarkerColor mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.LightenBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Lighten mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.ScreenBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Screen mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.ColorDodgeBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            ColorDodge mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.LinearDodgeBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            LinearDodge mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.LighterColorBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            LighterColor mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.OverlayBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Overlay mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.SoftLightBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            SoftLight mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.HardLightBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            HardLight mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.VividLightBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            VividLight mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.LinearLightBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            LinearLight mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.PinLightBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            PinLight mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.HardMixBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            HardMix mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.DifferenceBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Difference mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.ExclusionBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Exclusion mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.SubtractBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Subtract mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.DivideBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Divide mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.HueBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Hue mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.ColorBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Component-Color mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.SaturationBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Saturation mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="M:MGS.UCommon.Utility.ColorBlendUtility.LuminosityBlend(UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Luminosity mode blend color a and color b.
+            </summary>
+            <param name="a">Color a.</param>
+            <param name="b">Color b.</param>
+            <returns>Blended color.</returns>
+        </member>
+        <member name="T:MGS.UCommon.Utility.EventSystemUtility">
+            <summary>
+            Utility for EventSystem.
             </summary>
         </member>
-        <member name="F:MGS.UCommon.Structure.PlaneArea.width">
+        <member name="M:MGS.UCommon.Utility.EventSystemUtility.CheckPointerOverGameObject(UnityEngine.GameObject)">
             <summary>
-            Width of area.
+            Check mouse pointer is over target gameobject?
             </summary>
-        </member>
-        <member name="F:MGS.UCommon.Structure.PlaneArea.length">
-            <summary>
-            Length of area.
-            </summary>
-        </member>
-        <member name="M:MGS.UCommon.Structure.PlaneArea.#ctor(UnityEngine.Transform,System.Single,System.Single)">
-            <summary>
-            Constructor.
-            </summary>
-            <param name="center">Center of area.</param>
-            <param name="width">Width of area.</param>
-            <param name="length">Length of area.</param>
+            <param name="target">Target gameobject.</param>
+            <returns>Pointer is over target gameobject?</returns>
         </member>
         <member name="T:MGS.UCommon.Utility.MeshUtility">
             <summary>
@@ -1030,6 +1633,18 @@
             <param name="polygon">Edge count of prism polygon.</param>
             <param name="segment">Segment count of prism vertices vertical division.</param>
             <returns>UV base on prism.</returns>
+        </member>
+        <member name="T:MGS.UCommon.Utility.RectUtility">
+            <summary>
+            Utility for RectTransform.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.Utility.RectUtility.Mirror(UnityEngine.RectTransform,MGS.UCommon.Generic.MirrorMode)">
+            <summary>
+            Mirror RectTransform.
+            </summary>
+            <param name="rect">Target RectTransform.</param>
+            <param name="mode">Mode of mirror.</param>
         </member>
         <member name="T:MGS.UCommon.Utility.VectorUtility">
             <summary>
