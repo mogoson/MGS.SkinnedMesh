@@ -53,9 +53,8 @@
         </member>
         <member name="M:MGS.Common.Converter.ByteConverter.ToBoolean(System.Byte[],System.Int32,System.Int32)">
             <summary>
-            Byte array to Boolean array.
+            Convert byte array to boolean array.
             </summary>
-            <returns>Convert Boolean array.</returns>
             <param name="bytes">Bytes array.</param>
             <param name="start">Start index.</param>
             <param name="count">Convert Boolean count.</param>
@@ -63,9 +62,8 @@
         </member>
         <member name="M:MGS.Common.Converter.ByteConverter.ToInt16(System.Byte[],System.Int32,System.Int32)">
             <summary>
-            Byte array to Int16 array.
+            Convert byte array to Int16 array.
             </summary>
-            <returns>Convert Int16 array.</returns>
             <param name="bytes">Bytes array.</param>
             <param name="start">Start index.</param>
             <param name="count">Convert Int16 count.</param>
@@ -73,9 +71,8 @@
         </member>
         <member name="M:MGS.Common.Converter.ByteConverter.ToInt32(System.Byte[],System.Int32,System.Int32)">
             <summary>
-            Byte array to Int32 array.
+            Convert byte array to Int32 array.
             </summary>
-            <returns>Convert Int32 array.</returns>
             <param name="bytes">Bytes array.</param>
             <param name="start">Start index.</param>
             <param name="count">Convert Int32 count.</param>
@@ -83,9 +80,8 @@
         </member>
         <member name="M:MGS.Common.Converter.ByteConverter.ToInt64(System.Byte[],System.Int32,System.Int32)">
             <summary>
-            Byte array to Int64 array.
+            Convert byte array to Int64 array.
             </summary>
-            <returns>Convert Int64 array.</returns>
             <param name="bytes">Bytes array.</param>
             <param name="start">Start index.</param>
             <param name="count">Convert Int64 count.</param>
@@ -93,9 +89,8 @@
         </member>
         <member name="M:MGS.Common.Converter.ByteConverter.ToChar(System.Byte[],System.Int32,System.Int32)">
             <summary>
-            Byte array to Char array.
+            Convert byte array to char array.
             </summary>
-            <returns>Convert Char array.</returns>
             <param name="bytes">Bytes array.</param>
             <param name="start">Start index.</param>
             <param name="count">Convert Char count.</param>
@@ -103,9 +98,8 @@
         </member>
         <member name="M:MGS.Common.Converter.ByteConverter.ToSingle(System.Byte[],System.Int32,System.Int32)">
             <summary>
-            Byte array to Single array.
+            Convert byte array to single array.
             </summary>
-            <returns>Convert Single array.</returns>
             <param name="bytes">Bytes array.</param>
             <param name="start">Start index.</param>
             <param name="count">Convert Single count.</param>
@@ -113,9 +107,8 @@
         </member>
         <member name="M:MGS.Common.Converter.ByteConverter.ToDouble(System.Byte[],System.Int32,System.Int32)">
             <summary>
-            Byte array to Double array.
+            Convert byte array to double array.
             </summary>
-            <returns>Convert Double array.</returns>
             <param name="bytes">Bytes array.</param>
             <param name="start">Start index.</param>
             <param name="count">Convert Double count.</param>
@@ -128,7 +121,7 @@
         </member>
         <member name="M:MGS.Common.Converter.StructureConverter.FromByteArray``1(System.Byte[])">
             <summary>
-            Byte array to structure.
+            Convert byte array to structure.
             </summary>
             <typeparam name="T">Structure type.</typeparam>
             <param name="byteArray">Byte array.</param>
@@ -136,7 +129,7 @@
         </member>
         <member name="M:MGS.Common.Converter.StructureConverter.ToByteArray``1(``0)">
             <summary>
-            Structure to byte array.
+            Convert structure to byte array.
             </summary>
             <typeparam name="T">Structure type.</typeparam>
             <param name="structure">Structure.</param>
@@ -187,11 +180,11 @@
             <param name="dispose">Action of dispose object.</param>
             <param name="maxCount">Max count limit of objects in pool.</param>
         </member>
-        <member name="M:MGS.Common.DesignPattern.ObjectPool`1.TakeNew">
+        <member name="M:MGS.Common.DesignPattern.ObjectPool`1.Take">
             <summary>
-            Take a new object from pool.
+            Take a object from pool.
             </summary>
-            <returns>New object.</returns>
+            <returns>A object.</returns>
         </member>
         <member name="M:MGS.Common.DesignPattern.ObjectPool`1.Recycle(`0)">
             <summary>
@@ -252,9 +245,9 @@
             </summary>
             <param name="callback">Event callback.</param>
         </member>
-        <member name="M:MGS.Common.Generic.GenericEvent.ClearListener">
+        <member name="M:MGS.Common.Generic.GenericEvent.RemoveListeners">
             <summary>
-            Clear event listener.
+            Remove all event listeners.
             </summary>
         </member>
         <member name="M:MGS.Common.Generic.GenericEvent.Invoke">
@@ -266,7 +259,7 @@
             <summary>
             Generic event.
             </summary>
-            <typeparam name="T">Specified type of event data.</typeparam>
+            <typeparam name="T">Specified type of event arg.</typeparam>
         </member>
         <member name="F:MGS.Common.Generic.GenericEvent`1.callback">
             <summary>
@@ -285,16 +278,52 @@
             </summary>
             <param name="callback">Event callback.</param>
         </member>
-        <member name="M:MGS.Common.Generic.GenericEvent`1.ClearListener">
+        <member name="M:MGS.Common.Generic.GenericEvent`1.RemoveListeners">
             <summary>
-            Clear event listener.
+            Remove all event listeners.
             </summary>
         </member>
         <member name="M:MGS.Common.Generic.GenericEvent`1.Invoke(`0)">
             <summary>
             Invoke event.
             </summary>
-            <param name="data">Data of event.</param>
+            <param name="arg">Arg of event.</param>
+        </member>
+        <member name="T:MGS.Common.Generic.GenericEvent`2">
+            <summary>
+            Generic event.
+            </summary>
+            <typeparam name="T1">Specified type of event arg1.</typeparam>
+            <typeparam name="T2">Specified type of event arg2.</typeparam>
+        </member>
+        <member name="F:MGS.Common.Generic.GenericEvent`2.callback">
+            <summary>
+            Event callback.
+            </summary>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent`2.AddListener(System.Action{`0,`1})">
+            <summary>
+            Add event listener.
+            </summary>
+            <param name="callback">Event callback.</param>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent`2.RemoveListener(System.Action{`0,`1})">
+            <summary>
+            Remove event listener.
+            </summary>
+            <param name="callback">Event callback.</param>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent`2.RemoveListeners">
+            <summary>
+            Remove all event listeners.
+            </summary>
+        </member>
+        <member name="M:MGS.Common.Generic.GenericEvent`2.Invoke(`0,`1)">
+            <summary>
+            Invoke event.
+            </summary>
+            <param name="arg1">Arg1 of event.</param>
+            <param name="arg2">Arg2 of event.</param>
         </member>
         <member name="T:MGS.Common.IO.DirectoryUtility">
             <summary>
@@ -307,6 +336,13 @@
             </summary>
             <param name="path">Directory path.</param>
             <param name="error">Error message.</param>
+            <returns>Create directory path succeed?</returns>
+        </member>
+        <member name="M:MGS.Common.IO.DirectoryUtility.RequirePath(System.String)">
+            <summary>
+            Require the directory path exist.
+            </summary>
+            <param name="path">Directory path.</param>
             <returns>Create directory path succeed?</returns>
         </member>
         <member name="T:MGS.Common.IO.FileUtility">
@@ -346,12 +382,12 @@
         </member>
         <member name="P:MGS.Common.Logger.FileLogger.LogPath">
             <summary>
-            Path of log file.
+            Root path of log files.
             </summary>
         </member>
         <member name="F:MGS.Common.Logger.FileLogger.logPath">
             <summary>
-            Path of log file.
+            Root path of log files.
             </summary>
         </member>
         <member name="M:MGS.Common.Logger.FileLogger.#ctor">
@@ -359,36 +395,32 @@
             Constructor.
             </summary>
         </member>
-        <member name="M:MGS.Common.Logger.FileLogger.LogToFile(System.String,System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.FileLogger.LogToFile(System.String,System.String,System.Object[])">
             <summary>
             Logs a formatted message to local file.
             </summary>
             <param name="tag">Tag of log message.</param>
-            <param name="level">Level of log message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
         </member>
-        <member name="M:MGS.Common.Logger.FileLogger.Log(System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.FileLogger.Log(System.String,System.Object[])">
             <summary>
             Logs a formatted message to local file.
             </summary>
-            <param name="level">Level of log message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
         </member>
-        <member name="M:MGS.Common.Logger.FileLogger.LogError(System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.FileLogger.LogError(System.String,System.Object[])">
             <summary>
             Logs a formatted error message to local file.
             </summary>
-            <param name="level">Level of error message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
         </member>
-        <member name="M:MGS.Common.Logger.FileLogger.LogWarning(System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.FileLogger.LogWarning(System.String,System.Object[])">
             <summary>
             Logs a formatted warning message to local file.
             </summary>
-            <param name="level">Level of warning message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
         </member>
@@ -397,27 +429,24 @@
             Interface of logger.
             </summary>
         </member>
-        <member name="M:MGS.Common.Logger.ILogger.Log(System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.ILogger.Log(System.String,System.Object[])">
             <summary>
             Logs a formatted message.
             </summary>
-            <param name="level">Level of log message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
         </member>
-        <member name="M:MGS.Common.Logger.ILogger.LogError(System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.ILogger.LogError(System.String,System.Object[])">
             <summary>
             Logs a formatted error message.
             </summary>
-            <param name="level">Level of error message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
         </member>
-        <member name="M:MGS.Common.Logger.ILogger.LogWarning(System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.ILogger.LogWarning(System.String,System.Object[])">
             <summary>
             Logs a formatted warning message.
             </summary>
-            <param name="level">Level of warning message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
         </member>
@@ -431,616 +460,26 @@
             Logger of utility.
             </summary>
         </member>
-        <member name="M:MGS.Common.Logger.LogUtility.Log(System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.LogUtility.Log(System.String,System.Object[])">
             <summary>
             Logs a formatted message.
             </summary>
-            <param name="level">Level of log message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
         </member>
-        <member name="M:MGS.Common.Logger.LogUtility.LogError(System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.LogUtility.LogError(System.String,System.Object[])">
             <summary>
             Logs a formatted error message.
             </summary>
-            <param name="level">Level of error message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
         </member>
-        <member name="M:MGS.Common.Logger.LogUtility.LogWarning(System.Int32,System.String,System.Object[])">
+        <member name="M:MGS.Common.Logger.LogUtility.LogWarning(System.String,System.Object[])">
             <summary>
             Logs a formatted warning message.
             </summary>
-            <param name="level">Level of warning message.</param>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
-        </member>
-        <member name="T:MGS.Common.Mathematics.Vector">
-            <summary>
-            Vector in plane rectangular coordinate system.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Vector.x">
-            <summary>
-            X of vector.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Vector.y">
-            <summary>
-            Y of vector.
-            </summary>
-        </member>
-        <member name="P:MGS.Common.Mathematics.Vector.Zero">
-            <summary>
-            Origin(0,0) of plane rectangular coordinate system.
-            </summary>
-        </member>
-        <member name="P:MGS.Common.Mathematics.Vector.One">
-            <summary>
-            Vector(1,1) in plane rectangular coordinate system.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.#ctor(System.Double,System.Double)">
-            <summary>
-            Constructor.
-            </summary>
-            <param name="x">X of vector.</param>
-            <param name="y">Y of vector.</param>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.Equals(System.Object)">
-            <summary>
-            Equals?
-            </summary>
-            <param name="obj">Target obj.</param>
-            <returns>Equals?</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.GetHashCode">
-            <summary>
-            Get hash code.
-            </summary>
-            <returns>Hash code.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.ToString">
-            <summary>
-            To string.
-            </summary>
-            <returns>String.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.Center(MGS.Common.Mathematics.Vector,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Center of vector v1 and v2.
-            </summary>
-            <param name="v1">Vector v1.</param>
-            <param name="v2">Vector v2.</param>
-            <returns>The center of vector v1 and v2.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.Distance(MGS.Common.Mathematics.Vector,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Distance from vector v1 to v2.
-            </summary>
-            <param name="v1">Vector v1.</param>
-            <param name="v2">Vector v2.</param>
-            <returns>Distance from vector v1 to v2.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.op_Addition(MGS.Common.Mathematics.Vector,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Operator +
-            </summary>
-            <param name="lhs">Vector1.</param>
-            <param name="rhs">Vector2.</param>
-            <returns>lhs+rhs</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.op_Subtraction(MGS.Common.Mathematics.Vector,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Operator -
-            </summary>
-            <param name="lhs">Vector1.</param>
-            <param name="rhs">Vector2.</param>
-            <returns>lhs-rhs</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.op_UnaryNegation(MGS.Common.Mathematics.Vector)">
-            <summary>
-            Operator -
-            </summary>
-            <param name="p">Vector</param>
-            <returns>-Vector</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.op_Multiply(MGS.Common.Mathematics.Vector,System.Double)">
-            <summary>
-            Operator *
-            </summary>
-            <param name="lhs">Vector.</param>
-            <param name="rhs">double.</param>
-            <returns>lhs*rhs</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.op_Multiply(System.Double,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Operator *
-            </summary>
-            <param name="lhs">double.</param>
-            <param name="rhs">Vector.</param>
-            <returns>lhs*rhs</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.op_Equality(MGS.Common.Mathematics.Vector,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Operator ==
-            </summary>
-            <param name="lhs">Vector1.</param>
-            <param name="rhs">Vector2.</param>
-            <returns>lhs==rhs?</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Vector.op_Inequality(MGS.Common.Mathematics.Vector,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Operator !=
-            </summary>
-            <param name="lhs">Vector1.</param>
-            <param name="rhs">Vector2.</param>
-            <returns>lhs!=rhs?</returns>
-        </member>
-        <member name="T:MGS.Common.Mathematics.Circle">
-            <summary>
-            Circle in plane rectangular coordinate system.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Circle.c">
-            <summary>
-            Center.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Circle.r">
-            <summary>
-            Radius.
-            </summary>
-        </member>
-        <member name="P:MGS.Common.Mathematics.Circle.Unit">
-            <summary>
-            Unit circle.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Circle.#ctor(MGS.Common.Mathematics.Vector,System.Double)">
-            <summary>
-            Constructor.
-            </summary>
-            <param name="c">Center.</param>
-            <param name="r">Radius.</param>
-        </member>
-        <member name="T:MGS.Common.Mathematics.Line">
-            <summary>
-            Line in plane rectangular coordinate system.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Line.k">
-            <summary>
-            Slope of line.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Line.b">
-            <summary>
-            Intercept of line.
-            </summary>
-        </member>
-        <member name="P:MGS.Common.Mathematics.Line.Horizontal">
-            <summary>
-            Horizontal line (x axis).
-            </summary>
-        </member>
-        <member name="P:MGS.Common.Mathematics.Line.Vertical">
-            <summary>
-            Vertical line (y axis).
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Line.#ctor(System.Double,System.Double)">
-            <summary>
-            Constructor.
-            </summary>
-            <param name="k">Slope of line.</param>
-            <param name="b">Intercept of line.</param>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Line.FromPoints(MGS.Common.Mathematics.Vector,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Get the line that pass vector v1 and v2.
-            </summary>
-            <param name="v1">Vector p1.</param>
-            <param name="v2">Vector p2.</param>
-            <returns>The line that pass vector v1 and v2.</returns>
-        </member>
-        <member name="T:MGS.Common.Mathematics.Relation">
-            <summary>
-            Position relation.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Relation.Undefined">
-            <summary>
-            Undefined relation.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Relation.Coincidence">
-            <summary>
-            Coincidence.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Relation.External">
-            <summary>
-            External.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Relation.Internal">
-            <summary>
-            Internal.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Relation.Parallel">
-            <summary>
-            Parallel.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Relation.Vertical">
-            <summary>
-            Vertical.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Relation.Intersect">
-            <summary>
-            Intersect
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Relation.OutsideTangent">
-            <summary>
-            Outside tangent.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.Relation.InsideTangent">
-            <summary>
-            Inside tangent.
-            </summary>
-        </member>
-        <member name="T:MGS.Common.Mathematics.Planimetry">
-            <summary>
-            Planimetry.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetDistance(MGS.Common.Mathematics.Line,MGS.Common.Mathematics.Line)">
-            <summary>
-            Gets the distance from line L1 to line L2.
-            </summary>
-            <param name="L1">line L1.</param>
-            <param name="L2">line L2.</param>
-            <returns>The distance from line L1 to line L2.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetDistance(MGS.Common.Mathematics.Vector,MGS.Common.Mathematics.Line)">
-            <summary>
-            Gets the distance from vector to line.
-            </summary>
-            <param name="v">Vector.</param>
-            <param name="L">Line.</param>
-            <returns>The distance from vector to line.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetRelation(MGS.Common.Mathematics.Circle,MGS.Common.Mathematics.Circle)">
-            <summary>
-            Get relation of two circles.
-            </summary>
-            <param name="c1">Circle c1.</param>
-            <param name="c2">Circle c2.</param>
-            <returns>Relation of two circles.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetRelation(MGS.Common.Mathematics.Circle,MGS.Common.Mathematics.Line)">
-            <summary>
-            Get relation of circle and line.
-            </summary>
-            <param name="c">Circle.</param>
-            <param name="L">Line.</param>
-            <returns>Relation of circle and line.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetRelation(MGS.Common.Mathematics.Circle,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Get relation of circle and vector.
-            </summary>
-            <param name="c">Circle.</param>
-            <param name="v">Vector.</param>
-            <returns>Relation of circle and vector.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetRelation(MGS.Common.Mathematics.Line,MGS.Common.Mathematics.Line)">
-            <summary>
-            Get relation of two lines.
-            </summary>
-            <param name="L1">Line L1.</param>
-            <param name="L2">Line L2.</param>
-            <returns>Relation of two lines.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetRelation(MGS.Common.Mathematics.Line,MGS.Common.Mathematics.Vector)">
-            <summary>
-            Get relation of line and vector.
-            </summary>
-            <param name="L">Line.</param>
-            <param name="v">Vector.</param>
-            <returns>Relation of line and vector.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetIntersections(MGS.Common.Mathematics.Circle,MGS.Common.Mathematics.Circle)">
-            <summary>
-            Get intersections of two circles.
-            </summary>
-            <param name="c1">Circle c1.</param>
-            <param name="c2">Circle c2.</param>
-            <returns>Intersections of two circles.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetIntersections(MGS.Common.Mathematics.Circle,MGS.Common.Mathematics.Line)">
-            <summary>
-            Get intersections of circle and line.
-            </summary>
-            <param name="C">Circle.</param>
-            <param name="L">Line.</param>
-            <returns>Intersections of circle and line.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Planimetry.GetIntersections(MGS.Common.Mathematics.Line,MGS.Common.Mathematics.Line)">
-            <summary>
-            Get intersection of two lines.
-            </summary>
-            <param name="L1">Line L1.</param>
-            <param name="L2">Line L2.</param>
-            <returns>Intersection of two lines.</returns>
-        </member>
-        <member name="T:MGS.Common.Mathematics.Hermite">
-            <summary>
-            Hermite interpolation.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Hermite.Evaluate(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
-            <summary>
-            Evaluate the value of hermite curve at time.
-            </summary>
-            <param name="t0">Time of start key frame.</param>
-            <param name="t1">Time of end key frame.</param>
-            <param name="v0">Value of start key frame.</param>
-            <param name="v1">Value of end key frame.</param>
-            <param name="m0">Micro quotient value of start key frame.</param>
-            <param name="m1">Micro quotient value of end key frame.</param>
-            <param name="t">Time of curve to evaluate value.</param>
-            <returns>The value of hermite curve at time.</returns>
-        </member>
-        <member name="T:MGS.Common.Mathematics.KeyFrame">
-            <summary>
-            Key frame base on time and value.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.KeyFrame.time">
-            <summary>
-            Time of key frame.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.KeyFrame.value">
-            <summary>
-            Value of key frame.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.KeyFrame.inTangent">
-            <summary>
-            In tangent of key frame.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Mathematics.KeyFrame.outTangent">
-            <summary>
-            Out tangent of key frame.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.KeyFrame.#ctor(System.Double,System.Double)">
-            <summary>
-            Constructor.
-            </summary>
-            <param name="time">Time of key frame.</param>
-            <param name="value">Value of key frame.</param>
-        </member>
-        <member name="M:MGS.Common.Mathematics.KeyFrame.#ctor(System.Double,System.Double,System.Double,System.Double)">
-            <summary>
-            Constructor.
-            </summary>
-            <param name="time">Time of key frame.</param>
-            <param name="value">Value of key frame.</param>
-            <param name="inTangent">In tangent of key frame.</param>
-            <param name="outTangent">Out tangent of key frame.</param>
-        </member>
-        <member name="T:MGS.Common.Mathematics.HermiteCurve">
-            <summary>
-            Piecewise three hermite spline curve.
-            </summary>
-        </member>
-        <member name="P:MGS.Common.Mathematics.HermiteCurve.Item(System.Int32)">
-            <summary>
-            Indexer.
-            </summary>
-            <param name="index">Index of key frame.</param>
-            <returns>The key frame at index.</returns>
-        </member>
-        <member name="F:MGS.Common.Mathematics.HermiteCurve.frames">
-            <summary>
-            Key frames of curve.
-            </summary>
-        </member>
-        <member name="P:MGS.Common.Mathematics.HermiteCurve.KeyFramesCount">
-            <summary>
-            Count of key frames.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.HermiteCurve.#ctor">
-            <summary>
-            Constructor.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.HermiteCurve.#ctor(MGS.Common.Mathematics.KeyFrame[])">
-            <summary>
-            Constructor.
-            </summary>
-            <param name="frames">Key frames of curve.</param>
-        </member>
-        <member name="M:MGS.Common.Mathematics.HermiteCurve.Evaluate(System.Double)">
-            <summary>
-            Evaluate the value of hermite curve at time.
-            </summary>
-            <param name="t">Time of curve to evaluate value.</param>
-            <returns>The value of hermite curve at time.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.HermiteCurve.AddKeyFrame(System.Double,System.Double)">
-            <summary>
-            Add key frame to curve.
-            </summary>
-            <param name="time">Time of key frame.</param>
-            <param name="value">Value of key frame.</param>
-        </member>
-        <member name="M:MGS.Common.Mathematics.HermiteCurve.AddKeyFrame(MGS.Common.Mathematics.KeyFrame)">
-            <summary>
-            Add key frame to curve.
-            </summary>
-            <param name="keyFrame">Key frame to add.</param>
-        </member>
-        <member name="M:MGS.Common.Mathematics.HermiteCurve.RemoveKeyFrameAt(System.Int32)">
-            <summary>
-            Remove key frame at index.
-            </summary>
-            <param name="index">Index of key frame.</param>
-        </member>
-        <member name="M:MGS.Common.Mathematics.HermiteCurve.Evaluate(MGS.Common.Mathematics.KeyFrame,MGS.Common.Mathematics.KeyFrame,System.Double)">
-            <summary>
-            Evaluate the value of hermite curve at time on the range from start key frame to end key frame.
-            </summary>
-            <param name="start">Start key frame of hermite curve.</param>
-            <param name="end">End key frame of hermite curve.</param>
-            <param name="t">Time of curve to evaluate value.</param>
-            <returns>The value of hermite curve at time on the range from start key frame to end key frame.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.HermiteCurve.Evaluate(MGS.Common.Mathematics.KeyFrame[],System.Double)">
-            <summary>
-            Evaluate the value of hermite curve at time.
-            </summary>
-            <param name="frames">Key frames of hermite curve.</param>
-            <param name="t"></param>
-            <returns>The value of hermite curve at time.</returns>
-        </member>
-        <member name="T:MGS.Common.Mathematics.Maths">
-            <summary>
-            Mathematical concepts and methods.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.Maths.Lerp(System.Double,System.Double,System.Double)">
-            <summary>
-            Interpolates between a and b by t.
-            </summary>
-            <param name="from">Start value of interpolate value.</param>
-            <param name="to">End value of interpolate value.</param>
-            <param name="t">t is clamped between 0 and 1.</param>
-            <returns></returns>
-        </member>
-        <member name="T:MGS.Common.Mathematics.LinearSmooth">
-            <summary>
-            Linear Smooth.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.LinearSmooth.ThreePointSmooth(System.Double[])">
-            <summary>
-            Three point linear smooth.
-            </summary>
-            <param name="source">Data source.</param>
-            <returns>Smooth result.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.LinearSmooth.FivePointSmooth(System.Double[])">
-            <summary>
-            Five point linear smooth.
-            </summary>
-            <param name="source">Data source.</param>
-            <returns>Smooth result.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.LinearSmooth.SevenPointSmooth(System.Double[])">
-            <summary>
-            Seven point linear smooth.
-            </summary>
-            <param name="source">Data source.</param>
-            <returns>Smooth result.</returns>
-        </member>
-        <member name="T:MGS.Common.Mathematics.QuadraticSmooth">
-            <summary>
-            Quadratic Smooth.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.QuadraticSmooth.FivePointSmooth(System.Double[])">
-            <summary>
-            Five point quadratic smooth.
-            </summary>
-            <param name="source">Data source.</param>
-            <returns>Smooth result.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.QuadraticSmooth.SevenPointSmooth(System.Double[])">
-            <summary>
-            Seven point quadratic smooth.
-            </summary>
-            <param name="source">Data source.</param>
-            <returns>Smooth result.</returns>
-        </member>
-        <member name="T:MGS.Common.Mathematics.CubicSmooth">
-            <summary>
-            Cubic Smooth.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Mathematics.CubicSmooth.FivePointSmooth(System.Double[])">
-            <summary>
-            Five point cubic smooth.
-            </summary>
-            <param name="source">Data source.</param>
-            <returns>Smooth result.</returns>
-        </member>
-        <member name="M:MGS.Common.Mathematics.CubicSmooth.SevenPointSmooth(System.Double[])">
-            <summary>
-            Seven point cubic smooth.
-            </summary>
-            <param name="source">Data source.</param>
-            <returns>Smooth result.</returns>
-        </member>
-        <member name="T:MGS.Common.Utility.MultilingualUtility">
-            <summary>
-            Utility for multilingualism.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Utility.MultilingualUtility.SEPARATOR">
-            <summary>
-            Separator of paragraph key and value.
-            </summary>
-        </member>
-        <member name="P:MGS.Common.Utility.MultilingualUtility.Current">
-            <summary>
-            Current language.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Utility.MultilingualUtility.languages">
-            <summary>
-            Languages content list.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Utility.MultilingualUtility.directory">
-            <summary>
-            The directory of multilingualism files.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Utility.MultilingualUtility.#ctor">
-            <summary>
-            Constructor.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Utility.MultilingualUtility.Initialize(System.String)">
-            <summary>
-            Initialize the directory of multilingualism files.
-            </summary>
-            <param name="directory">The directory of multilingualism files.</param>
-        </member>
-        <member name="M:MGS.Common.Utility.MultilingualUtility.SetLanguage(System.String)">
-            <summary>
-            Set language by name.
-            </summary>
-            <param name="name">Name of language (Config in the LanguageSettings).</param>
-            <returns>Set language succeed?</returns>
-        </member>
-        <member name="M:MGS.Common.Utility.MultilingualUtility.GetParagraph(System.String)">
-            <summary>
-            Get a paragraph text of key in language.
-            </summary>
-            <param name="key">Key of paragraph text.</param>
-            <returns>A paragraph text of key in language.</returns>
         </member>
     </members>
 </doc>
