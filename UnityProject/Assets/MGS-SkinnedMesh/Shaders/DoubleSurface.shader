@@ -10,7 +10,7 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-Shader "Mogoson/DoubleSurface" {
+Shader "MGS/DoubleSurface" {
 	Properties{
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo (RGB)", 2D) = "white" {}

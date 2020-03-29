@@ -1,8 +1,8 @@
 /*************************************************************************
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  TestMachineCable.cs
- *  Description  :  Machine cable example.
+ *  File         :  TestCable.cs
+ *  Description  :  Test cable example.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -12,10 +12,10 @@
 
 using UnityEngine;
 
-namespace MGS.CurveHose
+namespace MGS.SkinnedMesh
 {
-    [AddComponentMenu("MGS/CurveHose/TestMachineCable")]
-    public class TestMachineCable : MonoBehaviour
+    [AddComponentMenu("MGS/SkinnedMesh/TestCable")]
+    public class TestCable : MonoBehaviour
     {
         #region Field and Property
         public Transform nozzle;
