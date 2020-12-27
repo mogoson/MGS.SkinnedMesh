@@ -1,10 +1,10 @@
 ﻿==========================================================================
-  Copyright © 2018-2019 Mogoson. All rights reserved.
-  Name: MGS-CurveHose
-  Author: Mogoson   Version: 1.0.0   Date: 8/16/2019
+  Copyright © 2020 Mogoson. All rights reserved.
+  Name: MGS-SkinnedMesh
+  Author: Mogoson   Version: 1.0.0   Date: 12/27/2020
 ==========================================================================
   [Summary]
-    Unity plugin for create flexible hose in scene.
+    Unity plugin for create skinned mesh in scene.
 --------------------------------------------------------------------------
   [Environment]
     Unity 5.0 or above.
@@ -49,10 +49,10 @@
     SHIFT key and click the red sphere to remove anchor if you want.
 --------------------------------------------------------------------------
   [Demo]
-    Demos in the path "MGS-CurveHose/Scenes" provide reference to you.
+    Demos in the path "MGS-SkinnedMesh/Scenes" provide reference to you.
 --------------------------------------------------------------------------
   [Resource]
-    https://github.com/mogoson/MGS-CurveHose.
+    https://github.com/mogoson/MGS-SkinnedMesh.
 --------------------------------------------------------------------------
   [Contact]
     If you have any questions, feel free to contact me at mogoson@outlook.com.

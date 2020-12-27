@@ -1,11 +1,14 @@
-﻿# MGS-CurveHose
+﻿# MGS-SkinnedMesh
 
 - [Alibaba Cloud](https://www.aliyun.com/minisite/goods?userCode=0fgf4qk9)
 
 ## Summary
-- Unity plugin for create flexible hose in scene.
+- Unity plugin for create skinned mesh in scene.
 
 ## Demand
+
+### CurveHose
+
 - Create flexible hose base on bezier curve.
 - Create flexible hose base on anchor curve.
 
@@ -14,6 +17,9 @@
 - .Net Framework 3.5 or above.
 
 ## Achieve
+
+### CurveHose
+
 - BezierCurve : Define bezier curve.
 
 - HermiteCurve : Hermite curve in three dimensional space.
@@ -41,36 +47,39 @@
 - SinHose : Render dynamic hose mesh base on sin curve.
 
 ## Demo
-- Demos in the path "MGS-CurveHose/Scenes" provide reference to you.
+- Demos in the path "MGS-SkinnedMesh/Scenes" provide reference to you.
 
 ## Preview
+
+### CurveHose
+
 - Bezier Hose Editor
 
-![Bezier Hose Editor](./Attachment/README_Image/BezierHoseEditor.gif)
+![Bezier Hose Editor](./Attachment/README_Image/CurveHose/BezierHoseEditor.gif)
 
 - Hermite Hose Editor
 
-![Hermite Hose Editor](./Attachment/README_Image/HermiteHoseEditor.gif)
+![Hermite Hose Editor](./Attachment/README_Image/CurveHose/HermiteHoseEditor.gif)
 
 - Circle Hose
 
-![Circle Hose](./Attachment/README_Image/CircleHose.gif)
+![Circle Hose](./Attachment/README_Image/CurveHose/CircleHose.gif)
 
 - Ellipse Hose
 
-![Ellipse Hose](./Attachment/README_Image/EllipseHose.gif)
+![Ellipse Hose](./Attachment/README_Image/CurveHose/EllipseHose.gif)
 
 - Sin Hose
 
-![Sin Hose](./Attachment/README_Image/SinHose.gif)
+![Sin Hose](./Attachment/README_Image/CurveHose/SinHose.gif)
 
 - Helix Hose
 
-![Helix Hose](./Attachment/README_Image/HelixHose.gif)
+![Helix Hose](./Attachment/README_Image/CurveHose/HelixHose.gif)
 
 - Machine Cable
 
-![Machine Cable](./Attachment/README_Image/MachineCable.gif)
+![Machine Cable](./Attachment/README_Image/CurveHose/MachineCable.gif)
 
 ## Contact
 - If you have any questions, feel free to contact me at mogoson@outlook.com.
