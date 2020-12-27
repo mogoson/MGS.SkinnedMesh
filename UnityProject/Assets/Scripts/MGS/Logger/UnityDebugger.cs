@@ -10,7 +10,6 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using MGS.Common.DesignPattern;
 using UnityEngine;
 
 namespace MGS.Logger
@@ -18,16 +17,14 @@ namespace MGS.Logger
     /// <summary>
     /// Debugger for unity editor.
     /// </summary>
-    public sealed class UnityDebugger : Singleton<UnityDebugger>, Common.Logger.ILogger
+    class UnityDebugger : Logger.ILogger
     {
-        #region Private Method
+        #region Public Method
         /// <summary>
         /// Constructor.
         /// </summary>
-        private UnityDebugger() { }
-        #endregion
+        public UnityDebugger() { }
 
-        #region Public Method
         /// <summary>
         /// Logs a formatted message.
         /// </summary>

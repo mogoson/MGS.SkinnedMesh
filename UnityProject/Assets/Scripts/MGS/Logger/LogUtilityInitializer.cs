@@ -1,8 +1,8 @@
 /*************************************************************************
  *  Copyright © 2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  LogUtilitySettings.cs
- *  Description  :  Settings of log utility.
+ *  File         :  LogUtilityInitializer.cs
+ *  Description  :  Initializer for log utility.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -10,37 +10,32 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using MGS.Common.Logger;
 using UnityEngine;
 
 namespace MGS.Logger
 {
     /// <summary>
-    /// Settings of log utility.
+    /// Initializer for log utility.
     /// </summary>
-    static class LogUtilitySettings
+    sealed class LogUtilityInitializer
     {
-        #region Field and Property
-#if !UNITY_EDITOR
-        /// <summary>
-        /// Path of log file.
-        /// </summary>
-        static readonly string LogPath = Application.persistentDataPath + "/Log/";
-#endif
-        #endregion
-
         #region Public Method
         /// <summary>
-        /// Initialize log utility.
+        /// Awake initializer.
         /// </summary>
         [RuntimeInitializeOnLoadMethod]
-        static void Initialize()
+        static void Awake()
         {
+            //Awake automatic execute after MonoBehaviour.Awake,
+            //so if you need to output logs earlier,
+            //your should move the following codes to your game start.
+
 #if UNITY_EDITOR
-            LogUtility.Logger = UnityDebugger.Instance;
+            LogUtility.AddLogger(new UnityDebugger());
 #else
-            FileLogger.Instance.LogPath = LogPath;
-            LogUtility.Logger = FileLogger.Instance;
+            //Use persistentDataPath support more platforms, example Android.
+            var logDir = string.Format("{0}/Log/", Application.persistentDataPath);
+            LogUtility.AddLogger(new FileLogger(logDir));
 #endif
         }
         #endregion
