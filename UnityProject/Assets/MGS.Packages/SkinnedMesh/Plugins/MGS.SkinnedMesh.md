@@ -1,6 +1,6 @@
 [TOC]
 
-# MGS.SkinnedMesh
+# MGS.SkinnedMesh.dll
 
 ## Summary
 
@@ -25,6 +25,18 @@ public sealed class MeshUtility{}
 ```
 
 ## Technology
+
+### Shared Mesh
+
+```C#
+meshRenderer.sharedMesh = mesh;
+meshRenderer.localBounds = mesh.bounds;
+if (meshCollider)
+{
+    meshCollider.sharedMesh = null;
+    meshCollider.sharedMesh = mesh;
+}
+```
 
 ### Build Vertices
 
@@ -115,18 +127,6 @@ mesh.RecalculateNormals();
 mesh.RecalculateBounds();
 ```
 
-### Shared Mesh
-
-```C#
-meshRenderer.sharedMesh = mesh;
-meshRenderer.localBounds = mesh.bounds;
-if (meshCollider)
-{
-    meshCollider.sharedMesh = null;
-    meshCollider.sharedMesh = mesh;
-}
-```
-
 ## Usage
 
 - Attach mono curve component to a game object.
@@ -140,36 +140,6 @@ var curve = GetComponent<MonoHermiteCurve>();
 curve.AddAnchor(new HermiteAnchor(point));
 curve..Rebuild();//The MonoSkinnedMesh will auto Rebuild.
 ```
-
-## Demo
-
-- Demos in the path "MGS.Packages/SkinnedMesh/Demo/" provide reference to you.
-
-## Preview
-
-- MonoHermiteCurveHose
-
-![](.\Attachment\images\MonoHermiteCurveHose.PNG)
-
-- MonoBezierCurveHose
-
-![](.\Attachment\images\MonoBezierCurveHose.PNG)
-
-- MonoHelixCurveHose
-
-![](./Attachment/images/MonoHelixCurveHose.png)
-
-- MonoEllipseCurveHose
-
-![](./Attachment/images/MonoEllipseCurveHose.png)
-
-- MonoSinCurveHose
-
-![](./Attachment/images/MonoSinCurveHose.png)
-
-- MonoSpringDemo
-
-![](./Attachment/images/MonoSpringDemo.png)
 
 ------
 

@@ -145,31 +145,9 @@ curve..Rebuild();//The MonoSkinnedMesh will auto Rebuild.
 
 - Demos in the path "MGS.Packages/SkinnedMesh/Demo/" provide reference to you.
 
-## Preview
+## Source
 
-- MonoHermiteCurveHose
-
-![](.\Attachment\images\MonoHermiteCurveHose.PNG)
-
-- MonoBezierCurveHose
-
-![](.\Attachment\images\MonoBezierCurveHose.PNG)
-
-- MonoHelixCurveHose
-
-![](./Attachment/images/MonoHelixCurveHose.png)
-
-- MonoEllipseCurveHose
-
-![](./Attachment/images/MonoEllipseCurveHose.png)
-
-- MonoSinCurveHose
-
-![](./Attachment/images/MonoSinCurveHose.png)
-
-- MonoSpringDemo
-
-![](./Attachment/images/MonoSpringDemo.png)
+- https://github.com/mogoson/MGS.SkinnedMesh.
 
 ------
 

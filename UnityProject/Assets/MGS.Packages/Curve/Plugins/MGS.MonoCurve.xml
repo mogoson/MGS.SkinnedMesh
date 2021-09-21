@@ -1,0 +1,585 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MGS.MonoCurve</name>
+    </assembly>
+    <members>
+        <member name="T:MGS.Curve.MonoBezierCurve">
+            <summary>
+            Mono curve base on cubic bezier curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoBezierCurve.anchor">
+            <summary>
+            Anchor points of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoBezierCurve.From">
+            <summary>
+            From point of anchor.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoBezierCurve.To">
+            <summary>
+            To point of anchor.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoBezierCurve.FrTangent">
+            <summary>
+            From tangent vector based on point.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoBezierCurve.ToTangent">
+            <summary>
+            To tangent vector based on point.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoBezierCurve.IsClose">
+            <summary>
+            Mono curve is close?
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoBezierCurve.Length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoBezierCurve.length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoBezierCurve.Curve">
+            <summary>
+            Curve for mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoBezierCurve.curve">
+            <summary>
+            Curve of mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoBezierCurve.Rebuild">
+            <summary>
+            Rebuild mono curve.
+            </summary>
+        </member>
+        <member name="T:MGS.Curve.MonoEllipseCurve">
+            <summary>
+            Mono curve base on ellipse curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoEllipseCurve.args">
+            <summary>
+            Args of ellipse mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoEllipseCurve.radian">
+            <summary>
+            radian of ellipse mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoEllipseCurve.Length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoEllipseCurve.length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoEllipseCurve.Curve">
+            <summary>
+            Curve for mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoEllipseCurve.curve">
+            <summary>
+            Curve of mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoEllipseCurve.Rebuild">
+            <summary>
+            Rebuild mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoEllipseCurve.LocalEvaluateNormalized(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at normalized time int the range[0,1].
+            </summary>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
+        </member>
+        <member name="M:MGS.Curve.MonoEllipseCurve.EvaluateLength">
+            <summary>
+            Evaluate length of mono curve.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MGS.Curve.MonoHelixCurve">
+            <summary>
+            Mono curve base on helix curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHelixCurve.from">
+            <summary>
+            From ellipse args of curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHelixCurve.to">
+            <summary>
+            To ellipse args of curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHelixCurve.altitude">
+            <summary>
+            Altitude from bottom to top.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHelixCurve.radian">
+            <summary>
+            Around radian.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoHelixCurve.Length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHelixCurve.length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoHelixCurve.Curve">
+            <summary>
+            Curve for mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHelixCurve.curve">
+            <summary>
+            Curve of mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoHelixCurve.Rebuild">
+            <summary>
+            Rebuild mono curve.
+            </summary>
+        </member>
+        <member name="T:MGS.Curve.MonoHermiteCurve">
+            <summary>
+            Mono curve base on anchors.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHermiteCurve.autoSmooth">
+            <summary>
+            Mono curve is auto smooth?
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHermiteCurve.anchors">
+            <summary>
+            Anchors of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoHermiteCurve.AnchorsCount">
+            <summary>
+            Count of mono curve anchors.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoHermiteCurve.IsClose">
+            <summary>
+            Mono curve is close?
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoHermiteCurve.Length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHermiteCurve.length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoHermiteCurve.Curve">
+            <summary>
+            Curve for mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHermiteCurve.curve">
+            <summary>
+            Curve of mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.Rebuild">
+            <summary>
+            Rebuild mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.LocalEvaluateNormalized(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at normalized time int the range[0,1].
+            </summary>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.AddAnchor(MGS.Curve.HermiteAnchor)">
+            <summary>
+            Add anchor item.
+            </summary>
+            <param name="anchor">Anchor item.</param>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.InsertAnchor(System.Int32,MGS.Curve.HermiteAnchor)">
+            <summary>
+            Insert Anchor item at index.
+            </summary>
+            <param name="index">Index of anchor.</param>
+            <param name="anchor">Anchor item.</param>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.SetAnchor(System.Int32,MGS.Curve.HermiteAnchor)">
+            <summary>
+            Set the anchor item at index.
+            </summary>
+            <param name="index">Index of anchor.</param>
+            <param name="anchor">Anchor item.</param>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.GetAnchor(System.Int32)">
+            <summary>
+            Get the anchor item at index.
+            </summary>
+            <param name="index">Anchor index.</param>
+            <returns>Anchor item.</returns>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.RemoveAnchor(MGS.Curve.HermiteAnchor)">
+            <summary>
+            Remove the anchor item.
+            </summary>
+            <param name="anchor">Anchor item.</param>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.RemoveAnchor(System.Int32)">
+            <summary>
+            Remove the anchor item at index.
+            </summary>
+            <param name="index">Anchor index.</param>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.ClearAnchors">
+            <summary>
+            Clear all anchor items.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.InverseTransformAnchor(MGS.Curve.HermiteAnchor)">
+            <summary>
+            Inverse transform anchor.
+            </summary>
+            <param name="anchor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.TransformAnchor(MGS.Curve.HermiteAnchor)">
+            <summary>
+            Transform anchor.
+            </summary>
+            <param name="anchor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.InverseAnchorTangents">
+            <summary>
+            Inverse anchor tangents from HermiteCurve.
+            (Require the anchors is already build to the curve)
+            </summary>
+        </member>
+        <member name="T:MGS.Curve.HermiteAnchor">
+            <summary>
+            Anchor settings of hermite curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.HermiteAnchor.point">
+            <summary>
+            Point of anchor.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.HermiteAnchor.inTangent">
+            <summary>
+            In tangent vector based on point.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.HermiteAnchor.outTangent">
+            <summary>
+            Out tangent vector based on point.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.HermiteAnchor.#ctor(UnityEngine.Vector3)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="point">Point of anchor.</param>
+        </member>
+        <member name="M:MGS.Curve.HermiteAnchor.#ctor(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="point">Point of anchor.</param>
+            <param name="inTangent">In tangent vector based on anchor point.</param>
+            <param name="outTangent">Out tangent vector based on anchor point.</param>
+        </member>
+        <member name="T:MGS.Curve.IMonoCurve">
+            <summary>
+            Interface of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.IMonoCurve.Length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurve.Rebuild">
+            <summary>
+            Rebuild mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurve.Evaluate(System.Single)">
+            <summary>
+            Evaluate point on mono curve at length.
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurve.EvaluateNormalized(System.Single)">
+            <summary>
+            Evaluate point on mono curve at normalized time int the range[0,1].
+            </summary>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurve.LocalEvaluate(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at length.
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurve.LocalEvaluateNormalized(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at normalized time int the range[0,1].
+            </summary>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
+        </member>
+        <member name="T:MGS.Curve.MonoCurve">
+            <summary>
+            Mono curve base on curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurve.Length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurve.Curve">
+            <summary>
+            Curve for mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.Reset">
+            <summary>
+            Reset component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.Awake">
+            <summary>
+            Awake component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.Rebuild">
+            <summary>
+            Rebuild mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.Evaluate(System.Single)">
+            <summary>
+            Evaluate point on mono curve at length.
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.EvaluateNormalized(System.Single)">
+            <summary>
+            Evaluate point on mono curve at normalized time int the range[0,1].
+            </summary>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.LocalEvaluate(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at length.
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.LocalEvaluateNormalized(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at normalized time int the range[0,1].
+            </summary>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.EvaluateLength(System.Single)">
+            <summary>
+            Evaluate length of mono curve.
+            </summary>
+            <param name="differ">Differentiation.</param>
+            <returns></returns>
+        </member>
+        <member name="T:MGS.Curve.MonoSinCurve">
+            <summary>
+            Mono curve base on sin curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoSinCurve.args">
+            <summary>
+            Args of sin mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoSinCurve.radian">
+            <summary>
+            radian of sin mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoSinCurve.Length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoSinCurve.length">
+            <summary>
+            Length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoSinCurve.Curve">
+            <summary>
+            Curve for mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoSinCurve.curve">
+            <summary>
+            Curve of mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoSinCurve.Rebuild">
+            <summary>
+            Rebuild mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoSinCurve.LocalEvaluateNormalized(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at normalized time int the range[0,1].
+            </summary>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
+        </member>
+        <member name="M:MGS.Curve.MonoSinCurve.EvaluateLength">
+            <summary>
+            Evaluate length of mono curve.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MGS.Curve.MonoCurveRenderer">
+            <summary>
+            Renderer for mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoCurveRenderer.segment">
+            <summary>
+            Detail length for renderer.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurveRenderer.Segment">
+            <summary>
+            Segment length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurveRenderer.Renderer">
+            <summary>
+            Renderer component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveRenderer.Reset">
+            <summary>
+            Reset component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveRenderer.OnMonoCurveRebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            [MESSAGE] On mono curve rebuild.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveRenderer.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild renderer base curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="T:MGS.Curve.IMonoCurveRenderer">
+            <summary>
+            Interface of renderer that base on mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.IMonoCurveRenderer.Renderer">
+            <summary>
+            Renderer component.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.IMonoCurveRenderer.Segment">
+            <summary>
+            Segment length of mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurveRenderer.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild renderer base mono curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="T:MGS.Curve.MonoCurveLineRenderer">
+            <summary>
+            Line renderer for mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoCurveLineRenderer.lineRenderer">
+            <summary>
+            Renderer component.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurveLineRenderer.Renderer">
+            <summary>
+            Renderer component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveLineRenderer.Reset">
+            <summary>
+            Reset component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveLineRenderer.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild renderer base curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="T:MGS.Curve.MonoCurveUtility">
+            <summary>
+            Utility for mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveUtility.GetSegmentCount(MGS.Curve.IMonoCurve,System.Single,System.Single@)">
+            <summary>
+            Get segment count of mono curve.
+            </summary>
+            <param name="curve"></param>
+            <param name="segment"></param>
+            <param name="differ">Differentiation.</param>
+            <returns>Detail count of mono curve.</returns>
+        </member>
+    </members>
+</doc>

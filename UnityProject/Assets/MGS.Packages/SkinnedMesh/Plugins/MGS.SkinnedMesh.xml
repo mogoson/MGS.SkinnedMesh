@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MGS.SkinnedMesh</name>
+    </assembly>
+    <members>
+        <member name="T:MGS.SkinnedMesh.MonoSkinnedMesh">
+            <summary>
+            Render dynamic skinned mesh.
+            </summary>
+        </member>
+        <member name="F:MGS.SkinnedMesh.MonoSkinnedMesh.meshRenderer">
+            <summary>
+            Skinned mesh renderer of skin.
+            </summary>
+        </member>
+        <member name="F:MGS.SkinnedMesh.MonoSkinnedMesh.meshCollider">
+            <summary>
+            Mesh collider of skin.
+            </summary>
+        </member>
+        <member name="F:MGS.SkinnedMesh.MonoSkinnedMesh.mesh">
+            <summary>
+            Mesh of skin.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.MonoSkinnedMesh.Renderer">
+            <summary>
+            Skinned mesh renderer of skin.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.MonoSkinnedMesh.Collider">
+            <summary>
+            Mesh collider of skin.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoSkinnedMesh.Reset">
+            <summary>
+            Reset component.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoSkinnedMesh.Rebuild(UnityEngine.Mesh)">
+            <summary>
+            Rebuild the mesh of skin.
+            </summary>
+            <param name="mesh">Mesh of skin.</param>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoSkinnedMesh.Rebuild">
+            <summary>
+            Rebuild the mesh of skin.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoSkinnedMesh.AttachCollider">
+            <summary>
+            Attach MeshCollider to skin.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoSkinnedMesh.RemoveCollider">
+            <summary>
+            Remove MeshCollider from skin.
+            </summary>
+        </member>
+        <member name="T:MGS.SkinnedMesh.MonoCurveHose">
+            <summary>
+            Render dynamic hose mesh base on mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.SkinnedMesh.MonoCurveHose.segment">
+            <summary>
+            Segment length of mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.SkinnedMesh.MonoCurveHose.polygon">
+            <summary>
+            Polygon of hose cross section.
+            </summary>
+        </member>
+        <member name="F:MGS.SkinnedMesh.MonoCurveHose.radius">
+            <summary>
+            Radius of hose mesh.
+            </summary>
+        </member>
+        <member name="F:MGS.SkinnedMesh.MonoCurveHose.seal">
+            <summary>
+            Is seal at both ends of hose?
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.MonoCurveHose.MGS#Curve#IMonoCurveRenderer#Renderer">
+            <summary>
+            Renderer component.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.MonoCurveHose.Segment">
+            <summary>
+            Segment length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.MonoCurveHose.Polygon">
+            <summary>
+            Polygon of hose cross section.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.MonoCurveHose.Radius">
+            <summary>
+            Radius of hose mesh.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.MonoCurveHose.Seal">
+            <summary>
+            Is seal at both ends of hose?
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoCurveHose.OnMonoCurveRebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            [MESSAGE] On mono curve rebuild.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoCurveHose.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild renderer base mono curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="T:MGS.SkinnedMesh.MonoCurveSkinnedHose">
+            <summary>
+            Render dynamic hose mesh base on mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.SkinnedMesh.MonoCurveSkinnedHose.curve">
+            <summary>
+            Mono curve for curve hose.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoCurveSkinnedHose.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild renderer base curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoCurveSkinnedHose.Rebuild(UnityEngine.Mesh)">
+            <summary>
+            Rebuild the mesh of hose.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoCurveSkinnedHose.CreateVertices(MGS.Curve.IMonoCurve,System.Int32,System.Single,System.Boolean)">
+            <summary>
+            Create the vertices of hose mesh.
+            </summary>
+            <param name="curve"></param>
+            <param name="segments"></param>
+            <param name="differ"></param>
+            <param name="isSeal">Is seal at both ends of hose?</param>
+            <returns>Vertices array.</returns>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoCurveSkinnedHose.CreateTriangles(System.Int32,System.Boolean)">
+            <summary>
+            Create triangles of hose mesh.
+            </summary>
+            <param name="segments"></param>
+            <param name="isSeal">Is seal at both ends of hose?</param>
+            <returns>Triangles array.</returns>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoCurveSkinnedHose.CreateSideTriangles(System.Int32)">
+            <summary>
+            Create triangles of hose side mesh.
+            </summary>
+            <param name="segments"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MonoCurveSkinnedHose.CreateUV(System.Int32,System.Boolean)">
+            <summary>
+            Create uv of hose mesh.
+            </summary>
+            <param name="segments"></param>
+            <param name="isSeal">Is seal at both ends of hose?</param>
+            <returns>UV array.</returns>
+        </member>
+        <member name="T:MGS.SkinnedMesh.IMonoCurveHose">
+            <summary>
+            Interface of mono curve hose.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.IMonoCurveHose.Polygon">
+            <summary>
+            Polygon of hose cross section.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.IMonoCurveHose.Radius">
+            <summary>
+            Radius of hose mesh.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.IMonoCurveHose.Seal">
+            <summary>
+            Is seal at both ends of hose?
+            </summary>
+        </member>
+        <member name="T:MGS.SkinnedMesh.ISkinnedMesh">
+            <summary>
+            Interface of skinned mesh.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.ISkinnedMesh.Renderer">
+            <summary>
+            Skinned mesh renderer of skin.
+            </summary>
+        </member>
+        <member name="P:MGS.SkinnedMesh.ISkinnedMesh.Collider">
+            <summary>
+            Mesh collider of skin.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.ISkinnedMesh.Rebuild">
+            <summary>
+            Rebuild the mesh of skin.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.ISkinnedMesh.AttachCollider">
+            <summary>
+            Attach collider to skin mesh.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.ISkinnedMesh.RemoveCollider">
+            <summary>
+            Remove collider from skin mesh.
+            </summary>
+        </member>
+        <member name="T:MGS.SkinnedMesh.MeshUtility">
+            <summary>
+            Utility for mesh.
+            </summary>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MeshUtility.CreatePolygonVertices(System.Int32,System.Single,UnityEngine.Vector3,UnityEngine.Quaternion)">
+            <summary>
+            Create polygon vertices.
+            </summary>
+            <param name="edge">Edge count of polygon.</param>
+            <param name="radius">Radius of polygon.</param>
+            <param name="center">Center of polygon.</param>
+            <param name="rotation">Rotation of polygon.</param>
+            <returns>Vertices base on polygon.</returns>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MeshUtility.CreatePolygonTriangles(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Create polygon triangles index base on center vertice.
+            </summary>
+            <param name="edge">Edge count of polygon.</param>
+            <param name="center">Index of center vertice.</param>
+            <param name="start">Index of start vertice.</param>
+            <param name="clockwise">Triangle indexs is clockwise.</param>
+            <returns>Triangles base on polygon.</returns>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MeshUtility.CreatePrismTriangles(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create prism triangles index.
+            </summary>
+            <param name="polygon">Edge count of prism polygon.</param>
+            <param name="segment">Segment count of prism vertices vertical division.</param>
+            <param name="start">Start index of prism vertice.</param>
+            <returns>Triangles index base on prism.</returns>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MeshUtility.CreatePolygonUV(System.Int32)">
+            <summary>
+            Create polygon uv.
+            </summary>
+            <param name="edge">Edge count of polygon.</param>
+            <returns>UV base on polygon.</returns>
+        </member>
+        <member name="M:MGS.SkinnedMesh.MeshUtility.CreatePrismUV(System.Int32,System.Int32)">
+            <summary>
+            Create prism uv.
+            </summary>
+            <param name="polygon">Edge count of prism polygon.</param>
+            <param name="segment">Segment count of prism vertices vertical division.</param>
+            <returns>UV base on prism.</returns>
+        </member>
+    </members>
+</doc>
