@@ -11,9 +11,11 @@
 - .Net Framework 3.5 or above.
 - Unity 5.0 or above.
 
-## Platform
+## Dependence
 
-- Windows
+- [MGS.Curve.dll](.\MGS.Curve.md)
+- System.dll
+- UnityEngine.dll
 
 ## Implemented
 

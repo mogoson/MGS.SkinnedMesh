@@ -6,14 +6,14 @@
 
 - Unity plugin for create skinned mesh in scene.
 
+## Platform
+
+- Windows
+
 ## Environment
 
 - .Net Framework 3.5 or above.
 - Unity 5.0 or above.
-
-## Platform
-
-- Windows
 
 ## Implemented
 

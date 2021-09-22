@@ -11,9 +11,10 @@
 - .Net Framework 3.5 or above.
 - Unity 5.0 or above.
 
-## Platform
+## Dependence
 
-- Windows
+- System.dll
+- UnityEngine.dll
 
 ## Implemented
 
