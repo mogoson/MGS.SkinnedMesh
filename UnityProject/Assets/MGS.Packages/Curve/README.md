@@ -24,9 +24,10 @@ public class MonoEllipseCurve : MonoCurve{}
 public class MonoHelixCurve : MonoCurve{}
 public class MonoBezierCurve : MonoCurve{}
 public class MonoHermiteCurve : MonoCurve{}
-
 public abstract class MonoCurveRenderer : MonoBehaviour, IMonoCurveRenderer{}
 public class MonoCurveLineRenderer : MonoCurveRenderer{}
+public abstract class MonoCurveCollider : MonoBehaviour, IMonoCurveCollider{}
+public class MonoCurveCapsuleCollider : MonoCurveCollider{}
 ```
 
 ## Technology

@@ -4,6 +4,155 @@
         <name>MGS.MonoCurve</name>
     </assembly>
     <members>
+        <member name="T:MGS.Curve.IMonoCurveCollider">
+            <summary>
+            Interface of collider that base on mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.IMonoCurveCollider.Segment">
+            <summary>
+            Segment length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.IMonoCurveCollider.Segments">
+            <summary>
+            Segments count of collider.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.IMonoCurveCollider.Radius">
+            <summary>
+            Radius of collider.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.IMonoCurveCollider.IsTrigger">
+            <summary>
+            Collider is trigger?
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.IMonoCurveCollider.Material">
+            <summary>
+            PhysicMaterial of collider.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurveCollider.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild renderer base mono curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="T:MGS.Curve.MonoCurveCapsuleCollider">
+            <summary>
+            Capsule collider for mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.Start">
+            <summary>
+            Component start.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild collider base curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.SetCapsules(MGS.Curve.IMonoCurve,System.Int32,System.Single)">
+            <summary>
+            Set capsule colliders.
+            </summary>
+            <param name="curve"></param>
+            <param name="segments"></param>
+            <param name="differ"></param>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.RequireCapsules(System.Int32)">
+            <summary>
+            Require the count of capsule colliders.
+            </summary>
+            <param name="count"></param>
+        </member>
+        <member name="T:MGS.Curve.MonoCurveCollider">
+            <summary>
+            Collider for mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoCurveCollider.segment">
+            <summary>
+            Detail length for renderer.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoCurveCollider.radius">
+            <summary>
+            Radius of collider.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoCurveCollider.isTrigger">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoCurveCollider.material">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurveCollider.Segment">
+            <summary>
+            Segment length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurveCollider.Segments">
+            <summary>
+            Segments count of collider.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurveCollider.Radius">
+            <summary>
+            Radius of collider.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurveCollider.IsTrigger">
+            <summary>
+            Collider is trigger?
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.MonoCurveCollider.Material">
+            <summary>
+            PhysicMaterial of collider.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCollider.Reset">
+            <summary>
+            Reset component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCollider.OnMonoCurveRebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            [MESSAGE] On mono curve rebuild.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCollider.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild collider base curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCollider.OnDestroy">
+            <summary>
+            On destroy component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCollider.ClearChildren">
+            <summary>
+            Clear children in this transform.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCollider.Destroy(UnityEngine.Object)">
+            <summary>
+            Destroy object.
+            </summary>
+            <param name="obj"></param>
+        </member>
         <member name="T:MGS.Curve.MonoBezierCurve">
             <summary>
             Mono curve base on cubic bezier curve.
@@ -498,6 +647,11 @@
             Segment length of mono curve.
             </summary>
         </member>
+        <member name="P:MGS.Curve.MonoCurveRenderer.Segments">
+            <summary>
+            Segments count of renderer.
+            </summary>
+        </member>
         <member name="P:MGS.Curve.MonoCurveRenderer.Renderer">
             <summary>
             Renderer component.
@@ -533,6 +687,11 @@
         <member name="P:MGS.Curve.IMonoCurveRenderer.Segment">
             <summary>
             Segment length of mono curve.
+            </summary>
+        </member>
+        <member name="P:MGS.Curve.IMonoCurveRenderer.Segments">
+            <summary>
+            Segments count of renderer.
             </summary>
         </member>
         <member name="M:MGS.Curve.IMonoCurveRenderer.Rebuild(MGS.Curve.IMonoCurve)">

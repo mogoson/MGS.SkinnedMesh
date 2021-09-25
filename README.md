@@ -149,6 +149,8 @@ curve..Rebuild();//The MonoSkinnedMesh will auto Rebuild.
 
 - MonoHermiteCurveHose
 
+![](.\Attachment\images\MonoHermiteCurveCollider.PNG)
+
 ![](.\Attachment\images\MonoHermiteCurveHose.PNG)
 
 - MonoBezierCurveHose

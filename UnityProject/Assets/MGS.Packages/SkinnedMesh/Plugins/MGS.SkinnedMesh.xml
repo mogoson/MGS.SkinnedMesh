@@ -95,6 +95,11 @@
             Segment length of mono curve.
             </summary>
         </member>
+        <member name="P:MGS.SkinnedMesh.MonoCurveHose.Segments">
+            <summary>
+            Segments count of renderer.
+            </summary>
+        </member>
         <member name="P:MGS.SkinnedMesh.MonoCurveHose.Polygon">
             <summary>
             Polygon of hose cross section.
