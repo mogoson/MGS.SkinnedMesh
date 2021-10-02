@@ -9,9 +9,14 @@
             Cubic bezier curve.
             </summary>
         </member>
-        <member name="F:MGS.Curve.BezierCurve.anchor">
+        <member name="F:MGS.Curve.BezierCurve.from">
             <summary>
-            Anchor settings of curve.
+            Anchor point of curve from.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.BezierCurve.to">
+            <summary>
+            Anchor point of curve to.
             </summary>
         </member>
         <member name="M:MGS.Curve.BezierCurve.#ctor">
@@ -19,11 +24,12 @@
             Constructor.
             </summary>
         </member>
-        <member name="M:MGS.Curve.BezierCurve.#ctor(MGS.Curve.BezierAnchor)">
+        <member name="M:MGS.Curve.BezierCurve.#ctor(MGS.Curve.BezierAnchor,MGS.Curve.BezierAnchor)">
             <summary>
             Constructor.
             </summary>
-            <param name="anchor">Anchor settings of curve.</param>
+            <param name="from">Anchor point of curve from.</param>
+            <param name="to">Anchor point of curve to.</param>
         </member>
         <member name="M:MGS.Curve.BezierCurve.Evaluate(System.Single)">
             <summary>
@@ -32,47 +38,36 @@
             <param name="t"></param>
             <returns></returns>
         </member>
-        <member name="M:MGS.Curve.BezierCurve.Evaluate(MGS.Curve.BezierAnchor,System.Single)">
+        <member name="M:MGS.Curve.BezierCurve.Evaluate(MGS.Curve.BezierAnchor,MGS.Curve.BezierAnchor,System.Single)">
             <summary>
             Evaluate the curve at anchor and time.
             </summary>
-            <param name="anchor"></param>
+            <param name="from"></param>
+            <param name="to"></param>
             <param name="t"></param>
             <returns></returns>
         </member>
         <member name="T:MGS.Curve.BezierAnchor">
             <summary>
-            Anchor settings of cubic bezier curve.
+            Anchor point of bezier curve.
             </summary>
         </member>
-        <member name="F:MGS.Curve.BezierAnchor.from">
+        <member name="F:MGS.Curve.BezierAnchor.point">
             <summary>
-            From point of anchor.
+            Point of anchor position.
             </summary>
         </member>
-        <member name="F:MGS.Curve.BezierAnchor.to">
+        <member name="F:MGS.Curve.BezierAnchor.tangent">
             <summary>
-            To point of anchor.
+            Point of anchor tangent.
             </summary>
         </member>
-        <member name="F:MGS.Curve.BezierAnchor.frTangent">
-            <summary>
-            From tangent point of anchor.
-            </summary>
-        </member>
-        <member name="F:MGS.Curve.BezierAnchor.toTangent">
-            <summary>
-            To tangent point of anchor.
-            </summary>
-        </member>
-        <member name="M:MGS.Curve.BezierAnchor.#ctor(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+        <member name="M:MGS.Curve.BezierAnchor.#ctor(UnityEngine.Vector3,UnityEngine.Vector3)">
             <summary>
             Constructor.
             </summary>
-            <param name="from">From point of anchor.</param>
-            <param name="to">To point of anchor.</param>
-            <param name="frTangent">From tangent point of anchor.</param>
-            <param name="toTangent">To tangent point of anchor.</param>
+            <param name="point">Point of anchor position.</param>
+            <param name="tangent">Point of anchor tangent.</param>
         </member>
         <member name="T:MGS.Curve.EllipseCurve">
             <summary>

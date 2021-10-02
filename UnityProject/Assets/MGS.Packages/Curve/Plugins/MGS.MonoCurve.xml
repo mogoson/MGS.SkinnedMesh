@@ -4,6 +4,128 @@
         <name>MGS.MonoCurve</name>
     </assembly>
     <members>
+        <member name="T:MGS.Curve.IMonoCurveCacher">
+            <summary>
+            Interface of cacher that base on mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurveCacher.Build(System.String)">
+            <summary>
+            Build cache file from mono curve.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurveCacher.Load(System.String)">
+            <summary>
+            Load cache file to mono curve.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MGS.Curve.MonoBezierCurveCacher">
+            <summary>
+            Cacher for mono bezier curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoBezierCurveCacher.curve">
+            <summary>
+            Host curve of cacher.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoBezierCurveCacher.Reset">
+            <summary>
+            Reset component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoBezierCurveCacher.SerializeCurve">
+            <summary>
+            Serialize mono curve to string content.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoBezierCurveCacher.DeserializeCurve(System.String)">
+            <summary>
+            Deserialize mono curve from string content.
+            </summary>
+            <param name="contents"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MGS.Curve.MonoCurveCacher">
+            <summary>
+            Cacher for mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCacher.Build(System.String)">
+            <summary>
+            Build cache file from mono curve.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCacher.Load(System.String)">
+            <summary>
+            Load cache file to mono curve.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCacher.SerializeCurve">
+            <summary>
+            Serialize mono curve to string content.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCacher.DeserializeCurve(System.String)">
+            <summary>
+            Deserialize mono curve from string content.
+            </summary>
+            <param name="contents"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCacher.WriteToFile(System.String,System.String)">
+            <summary>
+            Write content to local file.
+            </summary>
+            <param name="file"></param>
+            <param name="contents"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCacher.ReadFromFile(System.String)">
+            <summary>
+            Read content from local file.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MGS.Curve.MonoHermiteCurveCacher">
+            <summary>
+            Cacher for mono hermite curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoHermiteCurveCacher.curve">
+            <summary>
+            Host curve of cacher.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurveCacher.Reset">
+            <summary>
+            Reset component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurveCacher.SerializeCurve">
+            <summary>
+            Serialize mono curve to string content.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoHermiteCurveCacher.DeserializeCurve(System.String)">
+            <summary>
+            Deserialize mono curve from string content.
+            </summary>
+            <param name="contents"></param>
+            <returns></returns>
+        </member>
         <member name="T:MGS.Curve.IMonoCurveCollider">
             <summary>
             Interface of collider that base on mono curve.
@@ -34,15 +156,19 @@
             PhysicMaterial of collider.
             </summary>
         </member>
-        <member name="M:MGS.Curve.IMonoCurveCollider.Rebuild(MGS.Curve.IMonoCurve)">
-            <summary>
-            Rebuild renderer base mono curve.
-            </summary>
-            <param name="curve"></param>
-        </member>
         <member name="T:MGS.Curve.MonoCurveCapsuleCollider">
             <summary>
             Capsule collider for mono curve.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoCurveCapsuleCollider.colliderGroup">
+            <summary>
+            Group root of colliders.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.Reset">
+            <summary>
+            Reset component.
             </summary>
         </member>
         <member name="M:MGS.Curve.MonoCurveCapsuleCollider.Start">
@@ -50,11 +176,15 @@
             Component start.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.Rebuild(MGS.Curve.IMonoCurve)">
+        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.RebuildCollider(MGS.Curve.IMonoCurve)">
             <summary>
-            Rebuild collider base curve.
+            Rebuild collider for mono curve.
             </summary>
-            <param name="curve"></param>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.ClearCollider">
+            <summary>
+            Clear collider of mono curve.
+            </summary>
         </member>
         <member name="M:MGS.Curve.MonoCurveCapsuleCollider.SetCapsules(MGS.Curve.IMonoCurve,System.Int32,System.Single)">
             <summary>
@@ -69,6 +199,11 @@
             Require the count of capsule colliders.
             </summary>
             <param name="count"></param>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.OnDestroy">
+            <summary>
+            On destroy component.
+            </summary>
         </member>
         <member name="T:MGS.Curve.MonoCurveCollider">
             <summary>
@@ -120,31 +255,20 @@
             PhysicMaterial of collider.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoCurveCollider.Reset">
-            <summary>
-            Reset component.
-            </summary>
-        </member>
-        <member name="M:MGS.Curve.MonoCurveCollider.OnMonoCurveRebuild(MGS.Curve.IMonoCurve)">
-            <summary>
-            [MESSAGE] On mono curve rebuild.
-            </summary>
-            <param name="curve"></param>
-        </member>
         <member name="M:MGS.Curve.MonoCurveCollider.Rebuild(MGS.Curve.IMonoCurve)">
             <summary>
             Rebuild collider base curve.
             </summary>
             <param name="curve"></param>
         </member>
-        <member name="M:MGS.Curve.MonoCurveCollider.OnDestroy">
+        <member name="M:MGS.Curve.MonoCurveCollider.RebuildCollider(MGS.Curve.IMonoCurve)">
             <summary>
-            On destroy component.
+            Rebuild collider for mono curve.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoCurveCollider.ClearChildren">
+        <member name="M:MGS.Curve.MonoCurveCollider.ClearCollider">
             <summary>
-            Clear children in this transform.
+            Clear collider of mono curve.
             </summary>
         </member>
         <member name="M:MGS.Curve.MonoCurveCollider.Destroy(UnityEngine.Object)">
@@ -158,29 +282,24 @@
             Mono curve base on cubic bezier curve.
             </summary>
         </member>
-        <member name="F:MGS.Curve.MonoBezierCurve.anchor">
+        <member name="F:MGS.Curve.MonoBezierCurve.from">
             <summary>
-            Anchor points of mono curve.
+            Anchor point of mono curve from.
+            </summary>
+        </member>
+        <member name="F:MGS.Curve.MonoBezierCurve.to">
+            <summary>
+            Anchor point of mono curve to.
             </summary>
         </member>
         <member name="P:MGS.Curve.MonoBezierCurve.From">
             <summary>
-            From point of anchor.
+            Anchor point of mono curve from.
             </summary>
         </member>
         <member name="P:MGS.Curve.MonoBezierCurve.To">
             <summary>
-            To point of anchor.
-            </summary>
-        </member>
-        <member name="P:MGS.Curve.MonoBezierCurve.FrTangent">
-            <summary>
-            From tangent vector based on point.
-            </summary>
-        </member>
-        <member name="P:MGS.Curve.MonoBezierCurve.ToTangent">
-            <summary>
-            To tangent vector based on point.
+            Anchor point of mono curve to.
             </summary>
         </member>
         <member name="P:MGS.Curve.MonoBezierCurve.IsClose">
@@ -212,6 +331,20 @@
             <summary>
             Rebuild mono curve.
             </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoBezierCurve.InverseTransformAnchor(MGS.Curve.BezierAnchor)">
+            <summary>
+            Inverse transform anchor.
+            </summary>
+            <param name="anchor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoBezierCurve.TransformAnchor(MGS.Curve.BezierAnchor)">
+            <summary>
+            Transform anchor.
+            </summary>
+            <param name="anchor"></param>
+            <returns></returns>
         </member>
         <member name="T:MGS.Curve.MonoEllipseCurve">
             <summary>
@@ -417,6 +550,12 @@
             Clear all anchor items.
             </summary>
         </member>
+        <member name="M:MGS.Curve.MonoHermiteCurve.InverseAnchorTangents">
+            <summary>
+            Inverse anchor tangents from HermiteCurve.
+            (Require the anchors is already build to the curve)
+            </summary>
+        </member>
         <member name="M:MGS.Curve.MonoHermiteCurve.InverseTransformAnchor(MGS.Curve.HermiteAnchor)">
             <summary>
             Inverse transform anchor.
@@ -430,12 +569,6 @@
             </summary>
             <param name="anchor"></param>
             <returns></returns>
-        </member>
-        <member name="M:MGS.Curve.MonoHermiteCurve.InverseAnchorTangents">
-            <summary>
-            Inverse anchor tangents from HermiteCurve.
-            (Require the anchors is already build to the curve)
-            </summary>
         </member>
         <member name="T:MGS.Curve.HermiteAnchor">
             <summary>
@@ -579,6 +712,39 @@
             <param name="differ">Differentiation.</param>
             <returns></returns>
         </member>
+        <member name="T:MGS.Curve.IMonoCurveExtender">
+            <summary>
+            Interface of extender that base on mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurveExtender.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild extender base mono curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="T:MGS.Curve.MonoCurveExtender">
+            <summary>
+            Extender for mono curve.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveExtender.Reset">
+            <summary>
+            Reset component.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveExtender.OnMonoCurveRebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            [MESSAGE] On mono curve rebuild.
+            </summary>
+            <param name="curve"></param>
+        </member>
+        <member name="M:MGS.Curve.MonoCurveExtender.Rebuild(MGS.Curve.IMonoCurve)">
+            <summary>
+            Rebuild extender base curve.
+            </summary>
+            <param name="curve"></param>
+        </member>
         <member name="T:MGS.Curve.MonoSinCurve">
             <summary>
             Mono curve base on sin curve.
@@ -657,23 +823,6 @@
             Renderer component.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoCurveRenderer.Reset">
-            <summary>
-            Reset component.
-            </summary>
-        </member>
-        <member name="M:MGS.Curve.MonoCurveRenderer.OnMonoCurveRebuild(MGS.Curve.IMonoCurve)">
-            <summary>
-            [MESSAGE] On mono curve rebuild.
-            </summary>
-            <param name="curve"></param>
-        </member>
-        <member name="M:MGS.Curve.MonoCurveRenderer.Rebuild(MGS.Curve.IMonoCurve)">
-            <summary>
-            Rebuild renderer base curve.
-            </summary>
-            <param name="curve"></param>
-        </member>
         <member name="T:MGS.Curve.IMonoCurveRenderer">
             <summary>
             Interface of renderer that base on mono curve.
@@ -693,12 +842,6 @@
             <summary>
             Segments count of renderer.
             </summary>
-        </member>
-        <member name="M:MGS.Curve.IMonoCurveRenderer.Rebuild(MGS.Curve.IMonoCurve)">
-            <summary>
-            Rebuild renderer base mono curve.
-            </summary>
-            <param name="curve"></param>
         </member>
         <member name="T:MGS.Curve.MonoCurveLineRenderer">
             <summary>
@@ -725,6 +868,50 @@
             Rebuild renderer base curve.
             </summary>
             <param name="curve"></param>
+        </member>
+        <member name="T:MGS.Curve.ListJsonUtility">
+            <summary>
+            Utility for List json.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.ListJsonUtility.FromJson``1(System.String)">
+            <summary>
+            Deserialize List from avatar json.
+            </summary>
+            <typeparam name="T">Type of List item.
+            The T must with SerializableAttribute and public field or private property with SerializeField Attribute if custom type.
+            </typeparam>
+            <param name="json">Json text of ListAvatar.</param>
+            <returns>List object.</returns>
+        </member>
+        <member name="M:MGS.Curve.ListJsonUtility.ToJson``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Serialize List to avatar json.
+            </summary>
+            <typeparam name="T">Type of List item.
+            The T must with SerializableAttribute and public field or private property with SerializeField Attribute if custom type.
+            </typeparam>
+            <param name="list">Source list.</param>
+            <returns>Json text of ListAvatar.</returns>
+        </member>
+        <member name="T:MGS.Curve.ListJsonUtility.ListAvatar`1">
+            <summary>
+            Avatar for List serialize by JsonUtility.
+            </summary>
+            <typeparam name="T">Type of list item.
+            The T must with SerializableAttribute and public field or private property with SerializeField Attribute if custom type.
+            </typeparam>
+        </member>
+        <member name="F:MGS.Curve.ListJsonUtility.ListAvatar`1.source">
+            <summary>
+            Source list.
+            </summary>
+        </member>
+        <member name="M:MGS.Curve.ListJsonUtility.ListAvatar`1.#ctor(System.Collections.Generic.List{`0})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="source">Source list.</param>
         </member>
         <member name="T:MGS.Curve.MonoCurveUtility">
             <summary>
