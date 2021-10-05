@@ -672,6 +672,12 @@
             Awake component.
             </summary>
         </member>
+        <member name="M:MGS.Curve.MonoCurve.CheckRebuild">
+            <summary>
+            Check RectTransform rebuild mono curve.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:MGS.Curve.MonoCurve.Rebuild">
             <summary>
             Rebuild mono curve.
