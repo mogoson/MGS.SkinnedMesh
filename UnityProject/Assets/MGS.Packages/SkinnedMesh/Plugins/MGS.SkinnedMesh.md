@@ -29,18 +29,6 @@ public sealed class MeshUtility{}
 
 ## Technology
 
-### Shared Mesh
-
-```C#
-meshRenderer.sharedMesh = mesh;
-meshRenderer.localBounds = mesh.bounds;
-if (meshCollider)
-{
-    meshCollider.sharedMesh = null;
-    meshCollider.sharedMesh = mesh;
-}
-```
-
 ### Build Vertices
 
 ```C#
@@ -54,7 +42,11 @@ for (int i = 0; i <= edge; i++)
     vertices.Add(center + rotation * new Vector3(Mathf.Cos(radian), Mathf.Sin(radian)) * radius);
 }
 return vertices;
+```
 
+### Build Triangles
+
+```C#
 //Create polygon triangles index base on center vertice.
 var triangles = new List<int>();
 var offset = clockwise ? 0 : 1;
@@ -90,7 +82,11 @@ for (int s = 0; s < segment - 1; s++)
     }
 }
 return triangles;
+```
 
+### Build UV
+
+```C#
 //Create polygon uv.
 var uv = new List<Vector2>();
 var sector = 2 * Mathf.PI / edge;
@@ -98,7 +94,7 @@ var radian = 0f;
 var center = Vector2.one * 0.5f;
 for (int i = 0; i <= edge; i++)
 {
-    radian = sector * i;
+    radian = sector * (clockwise ? i : edge - i);
     uv.Add(center + new Vector2(Mathf.Cos(radian), Mathf.Sin(radian)) * 0.5f);
 }
 return uv;
@@ -124,24 +120,50 @@ return uv;
 ```C#
 //Rebuild the mesh of hose.
 mesh.vertices = CreateVertices(curve, segments, differ, isSeal);
-mesh.triangles = CreateTriangles(segments, isSeal);
 mesh.uv = CreateUV(segments, isSeal);
+mesh.triangles = CreateTriangles(segments, isSeal);
+
 mesh.RecalculateNormals();
+#if UNITY_5_6_OR_NEWER
+mesh.RecalculateTangents();
+#endif
 mesh.RecalculateBounds();
+```
+
+### Shared Mesh
+
+```C#
+meshRenderer.sharedMesh = mesh;
+meshRenderer.localBounds = mesh.bounds;
+if (meshCollider)
+{
+    meshCollider.sharedMesh = null;
+    meshCollider.sharedMesh = mesh;
+}
 ```
 
 ## Usage
 
-- Attach mono curve component to a game object.
-- Attach mono skinned mesh component to a game object.
-- Adjust the args of curve and skinned component or edit curve in scene editor.
+### Curve Hose
 
-- Adjust the args of curve and Rebuild runtime, and MonoSkinnedMesh will auto Rebuild.
+- Attach mono curve component to a game object.
+
+  ```tex
+  MonoHermiteCurve MonoBezierCurve MonoHelixCurve MonoEllipseCurve MonoSinCurve
+  ```
+
+- Attach mono curve hose component to the game object.
+
+  ```tex
+  MonoCurveSkinnedHose
+  ```
+
+- Rebuild mono curve runtime, and mono curve hose component will auto Rebuild.
 
 ```C#
 var curve = GetComponent<MonoHermiteCurve>();
 curve.AddAnchor(new HermiteAnchor(point));
-curve..Rebuild();//The MonoSkinnedMesh will auto Rebuild.
+curve.Rebuild();//The mono curve hose component will auto Rebuild.
 ```
 
 ------
