@@ -253,7 +253,7 @@
             <param name="edge">Edge count of polygon.</param>
             <param name="center">Index of center vertice.</param>
             <param name="start">Index of start vertice.</param>
-            <param name="clockwise">Triangle indexs is clockwise.</param>
+            <param name="clockwise">Triangle indexs is clockwise?</param>
             <returns>Triangles base on polygon.</returns>
         </member>
         <member name="M:MGS.SkinnedMesh.MeshUtility.CreatePrismTriangles(System.Int32,System.Int32,System.Int32)">
@@ -261,15 +261,16 @@
             Create prism triangles index.
             </summary>
             <param name="polygon">Edge count of prism polygon.</param>
-            <param name="segment">Segment count of prism vertices vertical division.</param>
+            <param name="segments">Segments count of prism vertices vertical division.</param>
             <param name="start">Start index of prism vertice.</param>
             <returns>Triangles index base on prism.</returns>
         </member>
-        <member name="M:MGS.SkinnedMesh.MeshUtility.CreatePolygonUV(System.Int32)">
+        <member name="M:MGS.SkinnedMesh.MeshUtility.CreatePolygonUV(System.Int32,System.Boolean)">
             <summary>
             Create polygon uv.
             </summary>
             <param name="edge">Edge count of polygon.</param>
+            <param name="clockwise">UV indexs is clockwise?</param>
             <returns>UV base on polygon.</returns>
         </member>
         <member name="M:MGS.SkinnedMesh.MeshUtility.CreatePrismUV(System.Int32,System.Int32)">
@@ -277,7 +278,7 @@
             Create prism uv.
             </summary>
             <param name="polygon">Edge count of prism polygon.</param>
-            <param name="segment">Segment count of prism vertices vertical division.</param>
+            <param name="segments">Segments count of prism vertices vertical division.</param>
             <returns>UV base on prism.</returns>
         </member>
     </members>
