@@ -13,7 +13,7 @@
 using MGS.Curve;
 using UnityEngine;
 
-namespace MGS.SkinnedMesh
+namespace MGS.SkinnedMesh.demo
 {
     public class MonoSpringDemo : MonoBehaviour
     {
