@@ -21,7 +21,8 @@
 public abstract class MonoSkinnedMesh : MonoBehaviour, ISkinnedMesh{}
 public abstract class MonoCurveHose : MonoSkinnedMesh, IMonoCurveHose{}
 public class MonoCurveSkinnedHose : MonoCurveHose, IMonoCurveHose{}
-public sealed class MeshUtility{}
+public sealed class MeshBuildUtility{}
+public sealed class MeshCombineUtility{}
 ```
 
 ## Technology
@@ -137,6 +138,29 @@ if (meshCollider)
     meshCollider.sharedMesh = null;
     meshCollider.sharedMesh = mesh;
 }
+```
+
+### Combine Mesh
+
+```C#
+var combines = new List<CombineInstance>();
+foreach (var filter in filters)
+{
+    var pos = filter.transform.position - center;
+    var combine = new CombineInstance
+    {
+        mesh = filter.sharedMesh,
+        transform = Matrix4x4.TRS(pos, filter.transform.rotation, filter.transform.lossyScale)
+    };
+    combines.Add(combine);
+}
+var rebornMesh = new Mesh();
+rebornMesh.CombineMeshes(combines.ToArray(), mergeSubMeshes);
+
+#if !UNITY_5_5_OR_NEWER
+    //Mesh.Optimize was removed in version 5.5.2p4.
+    rebornMesh.Optimize();
+#endif
 ```
 
 ## Usage
