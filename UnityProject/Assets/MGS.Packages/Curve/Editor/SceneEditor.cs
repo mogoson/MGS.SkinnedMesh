@@ -14,7 +14,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-#if UNITY_5_3_OR_NEWER
+#if UNITY_5_3 || UNITY_5_3_OR_NEWER
 using UnityEditor.SceneManagement;
 #endif
 
@@ -68,7 +68,7 @@ namespace MGS.Curve.Editors
 
         protected void MarkSceneDirty()
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_5_3 || UNITY_5_3_OR_NEWER
             EditorSceneManager.MarkAllScenesDirty();
 #else
             EditorApplication.MarkSceneDirty();

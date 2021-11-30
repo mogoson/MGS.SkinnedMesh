@@ -12,7 +12,7 @@
 
 using System.Collections.Generic;
 
-#if UNITY_5_3_OR_NEWER
+#if UNITY_5_3 || UNITY_5_3_OR_NEWER
 using UnityEngine;
 #else
 using System;
@@ -35,7 +35,7 @@ namespace MGS.Curve
         /// <returns>Json text of ListAvatar.</returns>
         public static string ToJson<T>(List<T> list)
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_5_3 || UNITY_5_3_OR_NEWER
             var avatar = new ListAvatar<T>(list);
             return JsonUtility.ToJson(avatar);
 #else
@@ -53,7 +53,7 @@ namespace MGS.Curve
         /// <returns>List object.</returns>
         public static List<T> FromJson<T>(string json)
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_5_3 || UNITY_5_3_OR_NEWER
             var avatar = JsonUtility.FromJson<ListAvatar<T>>(json);
             if (avatar == null)
             {
