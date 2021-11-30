@@ -1,5 +1,5 @@
 ﻿/*************************************************************************
- *  Copyright (c) 2021 Mogoson. All rights reserved.
+ *  Copyright © 2021 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  MonoSpringDemo.cs
  *  Description  :  Null.

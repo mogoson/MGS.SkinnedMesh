@@ -15,20 +15,6 @@
 - .Net Framework 3.5 or above.
 - Unity 5.0 or above.
 
-## Implemented
-
-```C#
-public abstract class MonoCurve : MonoBehaviour, IMonoCurve
-public class MonoSinCurve : MonoCurve{}
-public class MonoEllipseCurve : MonoCurve{}
-public class MonoHelixCurve : MonoCurve{}
-public class MonoBezierCurve : MonoCurve{}
-public class MonoHermiteCurve : MonoCurve{}
-
-public abstract class MonoCurveRenderer : MonoBehaviour, IMonoCurveRenderer{}
-public class MonoCurveLineRenderer : MonoCurveRenderer{}
-```
-
 ## Technology
 
 ### Check Rebuild

@@ -15,16 +15,6 @@
 - .Net Framework 3.5 or above.
 - Unity 5.0 or above.
 
-## Implemented
-
-```C#
-public abstract class MonoSkinnedMesh : MonoBehaviour, ISkinnedMesh{}
-public abstract class MonoCurveHose : MonoSkinnedMesh, IMonoCurveHose{}
-public class MonoCurveSkinnedHose : MonoCurveHose, IMonoCurveHose{}
-public sealed class MeshBuildUtility{}
-public sealed class MeshCombineUtility{}
-```
-
 ## Technology
 
 ### Build Vertices
