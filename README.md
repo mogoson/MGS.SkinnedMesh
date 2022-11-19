@@ -181,40 +181,6 @@ curve.Rebuild();//The mono curve hose component will auto Rebuild.
 
 - Demos in the path "MGS.Packages/SkinnedMesh/Demo/" provide reference to you.
 
-## Preview
-
-### Curve Hose
-
-- MonoHermiteCurveHose
-
-![](.\Attachment\images\MonoHermiteCurveCollider.PNG)
-
-![](.\Attachment\images\MonoHermiteCurveHose.PNG)
-
-- MonoBezierCurveHose
-
-![](.\Attachment\images\MonoBezierCurveHose.PNG)
-
-- MonoHelixCurveHose
-
-![](./Attachment/images/MonoHelixCurveHose.png)
-
-- MonoEllipseCurveHose
-
-![](./Attachment/images/MonoEllipseCurveHose.png)
-
-- MonoSinCurveHose
-
-![](./Attachment/images/MonoSinCurveHose.png)
-
-- MonoSpringDemo
-
-![](./Attachment/images/MonoSpringDemo.png)
-
-- Combine Meshes
-
-![](./Attachment/images/CombineMeshes.gif)
-
 ------
 
 [Previous](../../README.md)
