@@ -1,6 +1,6 @@
 [TOC]
 
-# MGS.MonoCurve
+# MGS.Curve
 
 ## Summary
 
@@ -173,7 +173,7 @@ while (t < 1.0f)
 
 ## Source
 
-- https://github.com/mogoson/MGS.MonoCurve.
+- https://github.com/mogoson/MGS.Curve.
 
 ------
 
