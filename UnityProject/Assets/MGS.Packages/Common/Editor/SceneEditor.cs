@@ -29,7 +29,7 @@ namespace MGS.Common.Editors
         protected readonly Handles.DrawCapFunction CircleCap = Handles.CircleCap;
         protected readonly Handles.DrawCapFunction SphereCap = Handles.SphereCap;
 #endif
-        protected readonly Color TransparentCyan = new Color(0, 1, 1, 0.1f);
+        protected readonly Color TransparentWhite = new Color(1, 1, 1, 0.1f);
         protected readonly Vector3 MoveSnap = Vector3.one;
 
         protected const float NodeSize = 0.125f;
