@@ -183,8 +183,4 @@ curve.Rebuild();//The mono curve hose component will auto Rebuild.
 
 ------
 
-[Previous](../../README.md)
-
-------
-
 Copyright © 2021 Mogoson.	mogoson@outlook.com
