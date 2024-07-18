@@ -1,0 +1,7 @@
+{
+    "description": "Unity plugin for create skinned mesh in scene.",
+    "displayName": "Skinned Mesh",
+    "name": "com.mgs.skinnedmesh",
+    "unity": "2021.3",
+    "version": "1.0.0"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "MGS.SkinnedMesh.Editor",
+    "rootNamespace": "",
+    "references": [
+        "MGS.SkinnedMesh",
+        "MGS.Curve"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
